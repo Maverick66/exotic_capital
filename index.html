@@ -257,6 +257,10 @@
 		</div>	
 
 
+
+
+
+
         <!--Button links and About-->
             <div id="container05" class="style2 container about" style="width: auto; height: auto">
                 <div class="inner" style="width: 1200; height: 150">	
@@ -275,17 +279,16 @@
                         </div>	 
                         </th>
                         
-                        
                         <th width="200" align="center" valign="middle" height="auto">
                         <div class="inner" style="width: 150; height: 20" align="center">
-                        <button id="whitepaper"></font)"><font size="3" face="Tahoma">White Paper</font></button>
+                        <button id="whitepaper" onclick="window.location.href='whitepaper.html'"></font"><font size="3" face="Tahoma">White Paper</font></button>
                         </div>	 
                         </th>
                         
-                        
                         <th width="200" align="center" valign="middle" height="auto">
                         <div class="inner" style="width: 150; height: 20" align="center">
-                        <button id="staking"><font size="3" face="Tahoma">Staking</font></button>
+                        <button id="staking" onclick="checkAccess('whitepaper.html')"><font size="3" face="Tahoma">Staking</font></button>
+
                         </div>	 
                         </th>
                  
@@ -406,7 +409,7 @@
 	
 	
 	
-  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
     <script src="scripts/phantom-login.js"></script>
     <script>
         function checkAccess(page) {
