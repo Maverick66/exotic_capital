@@ -3,7 +3,7 @@ import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 
 const VISTA_TOKEN_MINT = new PublicKey('4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump'); // Your $VISTA token mint
 const ENTRY_FEE_USD = 5; // $5 entry fee
-const ADMIN_WALLET = new PublicKey('YOUR_ADMIN_SOLANA_ADDRESS'); // Replace with your Solana address
+const ADMIN_WALLET = new PublicKey('6coEmLd2GVUHNuwn3Cc3RjBMXqi8gYwRoAcv9ryjXfhj'); // Replace with your Solana address
 const COINGECKO_API = 'https://api.coingecko.com/api/v3/simple/price?ids=vista-token&vs_currencies=usd';
 
 let provider = null;
@@ -101,4 +101,5 @@ window.onload = () => {
         document.getElementById('status').innerText = 'Welcome back to the ecosystem!';
     }
     document.getElementById('join-now').onclick = connectPhantom;
+
 };
