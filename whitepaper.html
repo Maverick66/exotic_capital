@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palm Ventures - Whitepaper</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .whitepaper-container { max-width: 800px; margin: auto; }
+        #whitepaper-frame { width: 100%; height: 600px; border: 1px solid #ccc; }
+        .checkbox-container { margin: 20px 0; }
+        button { padding: 10px 20px; margin: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:disabled { background-color: #ccc; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <div class="whitepaper-container">
+        <h1>Palm Ventures Whitepaper</h1>
+        <iframe id="whitepaper-frame" src="whitepaper.pdf"></iframe>
+        <div class="checkbox-container">
+            <label><input type="checkbox" id="read-checkbox"> I have read the whitepaper</label><br>
+            <label><input type="checkbox" id="risk-checkbox"> I understand the risks involved</label>
+        </div>
+        <button id="proceed-to-staking" disabled onclick="window.location.href='https://stake.smithii.io/palmventures'">Proceed to Staking</button>
+        <p id="status"></p>
+    </div>
+    <script>
+        const readCheckbox = document.getElementById('read-checkbox');
+        const riskCheckbox = document.getElementById('risk-checkbox');
+        const proceedButton = document.getElementById('proceed-to-staking');
+
+        function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                proceedButton.disabled = false;
+            } else {
+                proceedButton.disabled = true;
+            }
+        }
+
+        readCheckbox.addEventListener('change', checkCheckboxes);
+        riskCheckbox.addEventListener('change', checkCheckboxes);
+
+        if (!localStorage.getItem('ecosystemAccess')) {
+            document.getElementById('status').innerText = 'Please join the ecosystem first.';
+            proceedButton.style.display = 'none';
+            document.getElementById('whitepaper-frame').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
