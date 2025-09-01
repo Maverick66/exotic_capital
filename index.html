@@ -26,8 +26,8 @@
 <style>
 
  /* Reset styles */
-        html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, table, tr, th, td {
-        margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+        /*html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, table, tr, th, td {
+        margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}*/
 
 /* table Section*/
     
@@ -43,7 +43,7 @@
         body {background-color: #00FF80; *//* From your previous request  
         margin: 0;padding: 0;min-height: 100vh;font-family: Arial, sans-serif; /* Default font for all text */
         /*color: #333; /* Default text color (dark gray for contrast on #00FF80)*/
-        font-size: 16px; /* Default text size */}
+        /*font-size: 16px; /* Default text size *//*}*/
 
 /* Wrapper section*/
 			#wrapper { max-width: 1200px; margin: 0 auto;}
@@ -96,19 +96,18 @@
 	
 /* Text*/       
        
-/* Button section */
+/* Grey Button section */
 
-.buttons { /*display: flex*/;  gap: 20px;  justify-content: center;  padding: 10px;}
-   
-       .buttons {cursor: default;display: flex;justify-content: var(--flex-alignment);letter-spacing: 0;padding: 0;}
+    /*	.buttons { /*display*//*: flex;  gap: 20px;  justify-content: center;  padding: 10px;}*/
+    /*   .buttons {cursor: default;display: flex;justify-content: var(--flex-alignment);letter-spacing: 0;padding: 0;}
 		.buttons {max-width: 200px;text-align: center(--alignment);}
 		.buttons a {align-items: center;justify-content: center;max-width: 100%;text-align: center;text-decoration: none;vertical-align: middle;white-space: nowrap;}
 		.buttons.style1 {--flex-alignment: center;--alignment: center;gap: 0rem;flex-direction: row;flex-wrap: wrap;}
 		.buttons.style1 a {display: inline-block;width: 18rem;height: 3.5rem;line-height: calc(3.5rem - 2px);padding: 0 0.5rem;vertical-align: middle;font-family: 'Open Sans', sans-serif;font-size: 1.5em;font-weight: 600;border-radius: 1.5rem;direction: var(--site-language-direction);overflow: hidden;text-overflow: ellipsis;transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;}
 		.buttons.style1 .button {color: #FFFFFF;border: solid 1px #2E7D32;}
-		.buttons.style1 .button:hover {border-color: #2E7D32; background-color: #BFA100; /* Yellow hover */!important;color: #FFFFFF !important;}
+		.buttons.style1 .button:hover {border-color: #2E7D32; background-color: #BFA100; /* Yellow hover *//*!important;color: #FFFFFF !important;}*/
 
-        .btn {
+    /*    .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -122,17 +121,26 @@
         text-decoration: none;
         text-align: center;
         background-color: #2E7D32; /* Green color */
-        color: #FFFFFF; /* White text for contrast */
-        border: solid 1px #2E7D32;transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;}
+       /* color: #FFFFFF; /* White text for contrast */
+       /* border: solid 1px #2E7D32;transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;}
         
-        .btn:hover {background-color: #BFA100; /* Yellow hover */ border-color: #BFA100;color: #FFFFFF;}	
+        .btn:hover {background-color: #BFA100; /* Yellow hover */ /*border-color: #BFA100;color: #FFFFFF;}*/
+        
+/* Blue Button section */
+
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        button { padding: 10px 20px; margin: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        #staking { display: none; }
+        p#status { color: red; font-family: Tahoma; font-size: 18px; text-align: center; font-weight: 600}
+
+	
 		
 
 /* Social Icon section */
 
-.social-icons {  display: flex;  gap: 15px;  justify-content: center;  padding: 10px 0;}
+        .social-icons {  display: flex;  gap: 15px;  justify-content: center;  padding: 10px 0;}
 
-.social-icons img {  width: 32px;  height: 32px;}
+		.social-icons img {  width: 32px;  height: 32px;}
 	
         .icons.style2 {justify-content: flex-start;font-size: 1.5em;gap: 0rem;}
         .icons.style2 li a {border-radius: 100%;height: 2em;width: 2em;border-color: #FFFFFF;border-style: solid;border-width: 1px;transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;}				
@@ -199,58 +207,56 @@
 	<section id="home-section" class="active"><!--Home Section starts here-->
 
         <div class="banner" style="width: 1250; height: 418">
-        <img src="large_palmbanner.jpg" class="banner-image" alt="Website Banner" width="1470" height="auto">
+        <img src="Logos/Uploads/large_palmbanner.jpg" class="banner-image" alt="Website Banner" width="1470" height="auto">
         </div>
 
     <div id="main">
 
     <div id="container01" class="style1 container main" style="width: auto; height: auto">
 	
-		<hr id="divider02" class="style1">	
+		<!--<hr id="divider02" class="style1">-->	
 		<!--Title and description-->
 		<div id="container02" class="style2 container table" style="width: auto; height: auto">
 			<div class="inner">
-					<h1><font face="Veranda" color="#555" size="7">PALM VENTURES</font></h1>
-        			<p id="text05"><font face="Tahoma" color="#555" size="6">Welcome to Palm Ventures</font></p>
-        			<p id="text05"><font face="Tahoma" color="#555" size="6">Growing Wealth through Crypto Innovation</font></p>			
-        			<p id="text05"><font face="Tahoma" color="#555" size="4">Imagine if you could get a reward for staking your crypto, knowing the reward will come from ventures in to Real World Assets.</font></p>
-        			<p id="text05"><font face="Tahoma" color="#555" size="4">Real Estate Tokenization is an excelent opportunity that can build you real wealth.</font></p>
+					<h1><font face="Tahoma" color="#555" size="7"><b>PALM VENTURES</b></font></h1>
+        			<p id="text02"><font face="Tahoma" color="#555" size="6">Welcome to Palm Ventures</font></p>
+        			<p id="text03"><font face="Tahoma" color="#555" size="6">Growing Wealth through Crypto Innovation</font></p>			
+        			<p id="text04" style="line-height: 150%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" color="#555" size="4">Imagine if you could get a reward for staking your crypto, knowing the reward will come from ventures in to Real World Assets.</font></p>
+        			<p id="text05" style="line-height: 150%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" color="#555" size="4">Real Estate Tokenization is an excelent opportunity that can build you real wealth.</font></p>
+        			<p id="text06" style="line-height: 150%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" color="#555" size="4">Join our ecosystem and stake $VISTA for exclusive rewards!</font></p>
+
       		</div>
       	</div>
    	
       	<hr id="divider01" class="style1">
 		<!--Logo and Video-->
 		<div id="container03" class="style2 container table" style="width: auto; height: auto">
-			<div class="inner" style="width: auto; height: auto">		
+			<div class="inner" style="width: 1253; height: 324">		
 			 	<div table>
                     <table border="0" cellpadding="2" cellspacing="5" width="auto">
                       
                       <tr>
                       <th width="300" valign="middle">
-								<img src="palmventures_logo.png" alt="Palm Ventures, crypto investment, $RWT, venture capital, blockchain. Real World Property Tokenization" title="Palm Ventures | Crypto Investment" style="opacity: 1; background-image: none"  width="300" height="300">
+								<img src="Logos/Uploads/palmventures_logo.png" alt="Palm Ventures, crypto investment, $RWT, venture capital, blockchain. Real World Property Tokenization" title="Palm Ventures | Crypto Investment" style="opacity: 1; background-image: none"  width="300" height="300">
                       </th>
                       
                       <th width="540" valign="middle">
 							<div class="video-wrapper"> 
                         <video controls loop>
-                          <source src="palmventures_av1.mp4" type="video/mp4" width="531" height="300">
-                          <img src="large_palmlogo.jpg" alt="Video thumbnail" width="531" height="300">
+                          <source src="Logos/Uploads/palmventures_av1.mp4" type="video/mp4" width="531" height="300">
+                          <img src="Logos/Uploads/large_palmlogo.jpg" alt="Video thumbnail" width="531" height="300">
                         </video>
+                            </div>
                       </th>
                       </tr>
                       
                     </table>
-				</div>		
+				</div>
 			</div>
+    		<p id="status"></p>			
 		</div>	
 
-<!--<a href="https://linktr.ee/PalmVentures" class="frame" id="image02">
-<img border="0" dynsrc="palmventures_av1.mp4" start="fileopen,mouseover" src="large_palmlogo.jpg" loopdelay="3" loop="2" controls hspace="1" vspace="1" align="center" class="video" id="video01" width="531" height="300">
-</a>
-</div>
-</div>-->		
 
-        <hr id="divider02" class="style1">
         <!--Button links and About-->
             <div id="container05" class="style2 container about" style="width: auto; height: auto">
                 <div class="inner" style="width: 1200; height: 150">	
@@ -258,106 +264,91 @@
                     <table border="0" cellpadding="0" cellspacing="10">
                     <tr>
                         <th width="200" align="center" valign="middle" height="auto">
-                    <!--<div id="container11" class="style3 container cells">-->
                         <div class="inner" style="width: 150; height: 20" align="center">
-                        <!--<div class="buttons">-->
-                        <button id="buttons01" class="style1 buttons">
-                        <a href="https://linktr.ee/PalmVentures" class="button n01" role="button" aria-label="Join Palm Ventures"><font size="3" face="Tahoma">Join Now</font></a>
-                        <!--</div>-->
-                        </button>
+                        <button id="buy-tokens" onclick="window.open('https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump', '_blank')"><font size="3" face="Tahoma">Buy Tokens</font></button>
                         </div>	 
                         </th>
+                        
                         <th width="200" align="center" valign="middle" height="auto">
-                    <!--<div id="container11" class="style3 container cells">-->
                         <div class="inner" style="width: 150; height: 20" align="center">
-                        <!--<div class="buttons">-->
-                        <button id="buttons01" class="style1 buttons">
-                        <a href="https://linktr.ee/PalmVentures" class="button n01" role="button" aria-label="Join Palm Ventures"><font size="3" face="Tahoma">WhitePaper</font></a>
-                        <!--</div>-->
-                        </button>
+                        <button id="join-now"><font size="3" face="Tahoma">Eco System</font></button>
                         </div>	 
                         </th>
+                        
+                        
                         <th width="200" align="center" valign="middle" height="auto">
-                    <!--<div id="container11" class="style3 container cells">-->
                         <div class="inner" style="width: 150; height: 20" align="center">
-                        <!--<div class="buttons">-->
-                        <button id="buttons01" class="style1 buttons">
-                        <a href="https://linktr.ee/PalmVentures" class="button n01" role="button" aria-label="Join Palm Ventures"><font size="3" face="Tahoma">Ecosystem</font></a>
-                        <!--</div>-->
-                        </button>
+                        <button id="whitepaper"></font)"><font size="3" face="Tahoma">White Paper</font></button>
                         </div>	 
                         </th>
+                        
+                        
                         <th width="200" align="center" valign="middle" height="auto">
-                    <!--<div id="container11" class="style3 container cells">-->
                         <div class="inner" style="width: 150; height: 20" align="center">
-                        <!--<div class="buttons">-->
-                        <button id="buttons01" class="style1 buttons">
-                        <a href="https://linktr.ee/PalmVentures" class="button n01" role="button" aria-label="Join Palm Ventures"><font size="3" face="Tahoma">Staking</font></a>
-                        <!--</div>-->
-                        </button>
+                        <button id="staking"><font size="3" face="Tahoma">Staking</font></button>
                         </div>	 
                         </th>
-                        <th width="200" align="center" valign="middle" height="auto">
-                    <!--<div id="container11" class="style3 container cells">-->
-                        <div class="inner" style="width: 150; height: 20" align="center">
-                        <!--<div class="buttons">-->
-                        <button id="buttons05" class="style1 buttons">
-                        <a href="https://t.me/PalmVentures" class="button n03" role="button"><font size="3" face="Tahoma" aligne="center">Contact Us</font></a>
-                        <!--</div>-->
-                        </button>
-                        </div>	  
-                        </th>
+                 
                     </tr>
                     </table>
-
-
+                    
+        <hr id="divider02" class="style1">
+        
+	<!--About-->        
                     <div class="inner" style="width: 1200; height: 150">
                         <p><font face="Verdana" size="6">About us</font></p>
-                        <p id="text05"><font face="Tahoma" size="4">Palm Ventures is your gateway to crypto wealth!</font></p>
-                        <p id="text06"><font face="Tahoma" size="4">We are building innovative investment opportunities with our upcoming Real World Property Tokenization through Staking. Join our community!</font></p>
-                        <p id="text07"><font face="Tahoma" size="4">Palm Ventures: Growing Wealth, Crypto Style! Crypto Staking! Real World Assets!</font></p>
+                        <p id="text05" style="line-height: 150%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="4">Palm Ventures is your gateway to crypto wealth!</font></p>
+                        <p id="text06" style="line-height: 150%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="4">We are building innovative investment opportunities with our upcoming Real World Property Tokenization through Staking. Join our community!</font></p>
+                        <p id="text07" style="line-height: 150%; word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Tahoma" size="4">Palm Ventures: Growing Wealth, Crypto Style! Crypto Staking! Real World Assets!</font></p>
                     </div>		
                 </div>
             </div>
 
-	<!--social icons-->
+	<!--Social icons-->
             <div id="container06" class="style2 container social" style="width: auto; height: auto">
                 <div class="inner" style="width: 1200; height: 300">
                     <p><font face="Verdana" size="6">Contact us</font></p>
-                    <table border="2" cellpadding="2" width="25%">
+                    <table border="0" cellpadding="2" cellspacing="10" width="auto">
+                    
                     <tr>
-                        <td width="25%">
-                        <div class="inner" style="width: 75; height: 75" align="center">
-                        <div id="icons02" class="style2 icons">
-                        <a href="https://t.me/PalmVentures" target="_blank"> 		
-                        <svg aria-labelledby="icons02-icon-1-title"><font face="Tahoma" size="4"></font></svg>                            			
-                        <img src="icon_telegramlogo2.png" alt="Telegram" width="32" height="32">
+                        <td width="auto" align="center" valign="middle" height="auto">
+                        <div class="inner" style="width: auto; height: auto" align="center">
+                        <div id="icons02" class="style2 icons"><a href="https://t.me/PalmVentures" target="_blank"> 		
+                        <!--<svg aria-labelledby="icons02-icon-1-title">--><font face="Tahoma" size="4"></font><!--</svg>-->                           			
+                        <img src="Logos/Uploads/icon_telegramlogo2.png" alt="Telegram" width="32" height="32">
                         </a>
                         </div></div>
                         </td>
-                        <td width="25%">
-                        <div class="inner" style="width: 75; height: 75" align="center">
+                        
+                        
+                        <td width="auto" align="center" valign="middle" height="auto">
+                        <div class="inner" style="width: auto; height: auto" align="center">
                         <div id="icons03" class="style3 icons">
                         <a href="https://www.x.com/PalmVentures" target="_blank">
-                        <svg aria-labelledby="icons03-icon-1-title"><font face="Tahoma" size="4"></font></svg>
-                        <img src="icon_xlogo2.png" alt="X" width="32" height="32">
+                        <!--<svg aria-labelledby="icons03-icon-1-title">--><font face="Tahoma" size="4"></font><!--</svg>-->
+                        <img src="Logos/Uploads/icon_xlogo2.png" alt="X" width="32" height="32">
                         </a>
                         </div></div>
                         </td>
-                        <td width="25%">
-                        <div class="inner" style="width: 75; height: 75" align="center">
+                        
+                        
+                        <td width="auto" align="center" valign="middle" height="auto">
+                        <div class="inner" style="width: auto; height: auto" align="center">
                         <div id="icons04" class="style4 icons"> 
                         <a href="https://www.linktr.ee/PalmVentures" target="_blank">
-                        <svg aria-labelledby="icons04-icon-1-title"><font face="Tahoma" size="4"></font></svg>
-                        <img src="icon_limktreelogo2.png" alt="Linktree" width="32" height="32">
+                        <!--<svg aria-labelledby="icons04-icon-1-title">--><font face="Tahoma" size="4"></font><!--</svg>-->
+                        <img src="Logos/Uploads/icon_limktreelogo2.png" alt="Linktree" width="32" height="32">
                         </a>
-                        </div></div>                  </td>
-                        <td width="25%">
-                        <div class="inner" style="width: 75; height: 75" align="center">
+                        </div></div>
+                        </td>
+                        
+                        
+                        <td width="auto" align="center" valign="middle" height="auto">
+                        <div class="inner" style="width: auto; height: auto" align="center">
                         <div id="icons05" class="style5 icons">
                         <a href="https://za.pinterest.com/PalmVentures/palm-ventures" target="_blank">
-                        <svg aria-labelledby="icons05-icon-1-title"><font face="Tahoma" size="4"></font></svg>
-                        <img src="icon_pintrestlogo2.png" alt="Pintrest" width="32" height="32">
+                        <!--<svg aria-labelledby="icons05-icon-1-title">--><font face="Tahoma" size="4"></font><!--</svg>-->
+                        <img src="Logos/Uploads/icon_pintrestlogo2.png" alt="Pintrest" width="32" height="32">
                         </a>
                         </div></div>  
                         </td>
@@ -375,7 +366,7 @@
                             <div class="inner">					
                             <div class="image">
                             <a href="https://linktr.ee/PalmVentures" class="frame">
-                            <img src="palmventures_qr.png" alt="Palm Ventures | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization |Palm Ventures | Crypto Staking " title="Palm Ventures | Crypto Investment" width="150" height="150">
+                            <img src="Logos/Uploads/palmventures_qr.png" alt="Palm Ventures | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization |Palm Ventures | Crypto Staking " title="Palm Ventures | Crypto Investment" width="150" height="150">
                             </a>
                             </div>
                             </div>
@@ -384,7 +375,7 @@
                             <div class="inner">	
                             <div class="image">
                             <a href="https://coinlink" class="frame">			
-                            <img src="coin7.jpg" alt="$VISTA | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization |Palm Ventures | Crypto Staking | Gold Crypto Coin with Palm tree | Veni Vedi Vici" title="$VISTA | Golden Crypto Coin" width="150" height="150">
+                            <img src="Logos/Uploads/coin7.jpg" alt="$VISTA | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization |Palm Ventures | Crypto Staking | Gold Crypto Coin with Palm tree | Veni Vedi Vici" title="$VISTA | Golden Crypto Coin" width="150" height="150">
                             </a>
                             </div>
                             </div>
@@ -411,8 +402,21 @@
 	    </div>
     </div>   
     </div>
-	</section><!--Home Section Ends here-->  	
-</div>	
+	</section><!--Home Section Ends here-->  
+	
+	
+	
+  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+    <script src="scripts/phantom-login.js"></script>
+    <script>
+        function checkAccess(page) {
+            if (localStorage.getItem('ecosystemAccess')) {
+                window.location.href = page;
+            } else {
+                document.getElementById('status').innerText = 'Please join the ecosystem first.';
+            }
+        }
+    </script>
 
 </body>
 
