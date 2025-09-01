@@ -84,7 +84,6 @@ async function payEntryFee() {
 
         document.getElementById('status').innerText = 'Payment successful! You have access to the ecosystem.';
         document.getElementById('join-now').style.display = 'none';
-        document.getElementById('whitepaper').style.display = 'block';
         document.getElementById('staking').style.display = 'block';
         localStorage.setItem('ecosystemAccess', userPublicKey.toString());
     } catch (error) {
@@ -96,10 +95,8 @@ async function payEntryFee() {
 window.onload = () => {
     if (localStorage.getItem('ecosystemAccess')) {
         document.getElementById('join-now').style.display = 'none';
-        document.getElementById('whitepaper').style.display = 'block';
         document.getElementById('staking').style.display = 'block';
         document.getElementById('status').innerText = 'Welcome back to the ecosystem!';
     }
     document.getElementById('join-now').onclick = connectPhantom;
-
 };
