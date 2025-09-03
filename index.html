@@ -158,14 +158,14 @@
         <!-- Buttons -->
         <table style="width: 100%; margin: 20px 0;">
             <tr>
-                <td style="text-align: center;">
+                <!--<td style="text-align: center;">
                     <button id="connectWalletBtn" 
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         Connect Wallet
                     </button>
-                </td>
+                </td>-->
                 <td style="text-align: center;">
                     <button id="buyVistaBtn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
@@ -214,7 +214,7 @@
         </table>
 
         <!-- Connect Wallet Popup -->
-        <div id="connectPopup" class="popup">
+        <!--<div id="connectPopup" class="popup">
             <p style="font-family: Tahoma; font-size: 18px; margin: 0 0 10px;">Connect your Phantom Wallet</p>
             <button id="submitWalletBtn"
                     style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer;"
@@ -228,10 +228,10 @@
                     onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                 Cancel
             </button>
-        </div>
+        </div>-->
 
         <!-- Whitepaper Popup -->
-        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
+        <!--<div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
             <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
             <div style="margin-top: 10px;">
                 <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
@@ -241,7 +241,7 @@
                     Close
                 </button>
             </div>
-        </div>
+        </div>-->
 
         <!-- Social Icons -->
         <table style="width: 100%; margin: 20px 0;">
@@ -332,7 +332,7 @@
     </div>
 
     <!-- Inline JavaScript for Wallet, Popup, and Payment Logic -->
-    <script>
+    <!--<script>
         // Firebase Configuration
         const firebaseConfig = {
             apiKey: "__firebase_config_apiKey__",
@@ -522,7 +522,69 @@
     }
 
     window.addEventListener('load', checkAccess);
-</script>
+</script>-->
 
+
+    
+ <div class="wallet-status">
+    <span id="walletStatus">Not Connected</span>
+    <button onclick="showPopup()">Connect Wallet</button>
+  </div>
+  <div id="welcomeMessage" class="welcome-message" style="display: none;"></div>
+  <div id="walletPopup" class="popup">
+    <h2>Connect Phantom Wallet</h2>
+    <p>Please connect your Phantom Wallet to proceed.</p>
+    <button onclick="connectWallet()">Connect</button>
+    <button onclick="closePopup()">Cancel</button>
+  </div>
+  <!--Footer-->
+  <footer></footer>
+
+  <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
+  <script>
+    // Show popup on page load
+    window.onload = () => {
+      document.getElementById('walletPopup').classList.add('show');
+    };
+
+    // Show popup when clicking "Connect Wallet" button
+    function showPopup() {
+      document.getElementById('walletPopup').classList.add('show');
+    }
+
+    // Close popup without action
+    function closePopup() {
+      document.getElementById('walletPopup').classList.remove('show');
+    }
+
+    // Connect to Phantom Wallet
+    async function connectWallet() {
+      try {
+        const { solana } = window;
+        if (!solana || !solana.isPhantom) {
+          alert('Please install Phantom Wallet extension.');
+          return;
+        }
+        // Connect to wallet
+        await solana.connect();
+        const publicKey = solana.publicKey.toString();
+        const shortAddress = publicKey.slice(0, 4) + '...' + publicKey.slice(-4);
+        // Update wallet status
+        document.getElementById('walletStatus').textContent = `Connected: ${shortAddress}`;
+        // Show welcome message (using short address as name placeholder)
+        const userName = 'Andy'; // Replace with dynamic name if available
+        document.getElementById('welcomeMessage').textContent = 
+          `Welcome ${userName}! It's good to have you with us! Do you have $VISTA coins or do you need to purchase?`;
+        document.getElementById('welcomeMessage').style.display = 'block';
+        // Close popup
+        closePopup();
+        // Store connection status (public key only, no sensitive data)
+        localStorage.setItem('walletConnected', publicKey);
+      } catch (error) {
+        console.error('Wallet connection failed:', error);
+        alert('Failed to connect wallet. Please try again.');
+      }
+    }
+  </script>
 </body>
 </html>
