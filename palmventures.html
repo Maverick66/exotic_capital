@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +19,7 @@
         }
         .commercial-sidebar {
             position: fixed;
-            right: 10; /* Slight padding from edge */
+            right: 10px; /* Slight padding from edge */
             top: 0;
             width: 200px;
             display: flex;
@@ -81,7 +80,7 @@
         </table>
 
         <!-- Video -->
-        <div style="text-align: left; margin: 20px 0;">
+        <div style="text-align: center; margin: 20px 0;">
             <video width="auto" height="300" autoplay loop muted>
                 <source src="palmventures_av1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -89,8 +88,8 @@
         </div>
 
         <!-- About and Connect Section -->
-        <div style="text-align: left; margin: 20px 0;">
-            <p style="font-family: Verdana; font-size: 36px; margin: 10;">About us</p>
+        <div style="text-align: center; margin: 20px 0;">
+            <p style="font-family: Verdana; font-size: 36px; margin: 0;">About us</p>
             <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">
                 Palm Ventures is your gateway to crypto wealth!
             </p>
@@ -103,19 +102,23 @@
         </div>
 
         <!-- Buttons -->
-        <table style="width: 100%; margin: 0px 0;">
+        <table style="width: 100%; margin: 20px 0;">
             <tr>
-                <td style="width: 50%; padding: 10px; text-align: center;">
+                <td style="text-align: center;">
                     <button id="whitepaperBtn" 
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
-                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">WhitePaper</button>
+                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        View Whitepaper
+                    </button>
                 </td>
-                <td style="width: 50%; padding: 10px; text-align: center">
+                <td style="text-align: center;">
                     <button id="stakingBtn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  not-allowed; opacity: 0.5;"
                             onmouseover="if(this.disabled==false){this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
-                            onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">Stake Now!</button>
+                            onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
+                        Stake Now
+                    </button>
                 </td>
             </tr>
         </table>
@@ -184,15 +187,13 @@
         </table>
 
         <!-- Footer Text -->
-
-        <p style="font-family: Tahoma; font-size: 18px; text-align: left; margin: 20px 0;">
+        <p style="font-family: Tahoma; font-size: 18px; text-align: center; margin: 20px 0;">
             Palm Ventures | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
         </p>
 
-
         <!-- Gallery Placeholder -->
-        <!-- table--> 
-        <table style="width: 100%; margin: 40px 0; border-collapse: collapse;">
+        <!-- table -->
+        <table style="width: 100%; margin: 20px 0; border-collapse: collapse;">
             <tr>
                 <td style="width: 50%; padding: 10px; text-align: center; background-color: #f0f0f0; border: 1px solid navy;">
                     <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
@@ -202,7 +203,7 @@
                 </td>
             </tr>
         </table>
-        <!--/table -->
+        <!-- /table -->
 
         <!-- Footer -->
         <p style="font-family: Tahoma; font-size: 14px; text-align: center; margin: 20px 0;">
