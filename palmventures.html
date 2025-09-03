@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palm Ventures | Crypto Investment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #00FF80;
+            font-family: Tahoma, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1000px; /* Reduced from 1470px to avoid overlap with sidebar */
+            margin: 0 auto 0 20px; /* Shift left with left margin, auto centers vertically */
+            padding: 20px;
+            position: relative;
+        }
+        .commercial-sidebar {
+            position: fixed;
+            right: 0; /* Slight padding from edge */
+            top: 0;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .commercial-placeholder {
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .commercial-placeholder a {
+            font-family: Tahoma;
+            font-size: 14px;
+            color: navy;
+            text-decoration: none;
+        }
+        .commercial-placeholder a:hover {
+            color: #00FF80;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Banner -->
+        <img src="large_palmbanner.jpg" alt="Website Banner" width="100%" style="max-width: 1200px; height: auto;">
+
+        <!-- Title -->
+        <h1 style="font-family: Tahoma; font-size: 48px; text-align: center; margin: 20px 0;">PALM VENTURES</h1>
+
+        <!-- Logo and Welcome Text -->
+        <table style="width: 100%; margin-bottom: 20px;">
+            <tr>
+                <td style="width: 300px; text-align: center; vertical-align: top;">
+                    <img src="palmventures_logo.png" width="300" height="300" 
+                         alt="Palm Ventures, crypto investment, $RWT, venture capital, blockchain. Real World Property Tokenization" 
+                         title="Palm Ventures | Crypto Investment">
+                </td>
+                <td style="vertical-align: top; padding-left: 20px;">
+                    <p style="font-family: Tahoma; font-size: 36px; margin: 0;">Welcome to Palm Ventures</p>
+                    <p style="font-family: Tahoma; font-size: 36px; margin: 10px 0;">Growing Wealth through Crypto Innovation</p>
+                    <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">
+                        Imagine if you could get a reward for staking your crypto, knowing the reward will come from ventures in to Real World Assets.
+                    </p>
+                    <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">
+                        Real Estate Tokenization is an excellent opportunity that can build you real wealth.
+                    </p>
+                    <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">
+                        Join our ecosystem and stake $VISTA for exclusive rewards!
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Video -->
+        <div style="text-align: center; margin: 20px 0;">
+            <video width="auto" height="300" autoplay loop muted>
+                <source src="palmventures_av1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- About and Connect Section -->
+        <div style="text-align: left; margin: 20px 0;">
+            <p style="font-family: Verdana; font-size: 36px; margin: 10;">About us</p>
+            <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">
+                Palm Ventures is your gateway to crypto wealth!
+            </p>
+            <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">
+                We are building innovative investment opportunities with our upcoming Real World Property Tokenization through Staking. Join our community!
+            </p>
+            <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">
+                Palm Ventures: Growing Wealth, Crypto Style! Crypto Staking! Real World Assets!
+            </p>
+        </div>
+
+        <!-- Buttons -->
+        <table style="width: 100%; margin: 0px 0;">
+            <tr>
+                <td style="width: 50%; padding: 10px; text-align: center;">
+                    <button id="whitepaperBtn" 
+                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer;"
+                            onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">WhitePaper</button>
+                </td>
+                <td style="width: 50%; padding: 10px; text-align: center">
+                    <button id="stakingBtn" disabled
+                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  not-allowed; opacity: 0.5;"
+                            onmouseover="if(this.disabled==false){this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
+                            onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">Stake Now!</button>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Whitepaper Popup -->
+        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white;  padding: 20px; border: 2px solid navy; max-width: 80%;">
+            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
+            <div style="margin-top: 10px;">
+                <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
+                <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
+                <button onclick="closePopup()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top:  10px;">Close</button>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <table style="width: 100%; margin: 20px 0;">
+            <tr>
+                <td style="text-align: center;">
+                    <a href="https://t.me/PalmVentures" target="_blank">
+                        <button style="background-color: white; border: 2px solid #007bff; padding: 10px; cursor: pointer;"
+                                onmouseover="this.style.backgroundColor='lightblue'; this.style.borderColor='#007bff';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#007bff';">
+                            <img src="icon_telegramlogo2.png" alt="Telegram" width="32" height="32">
+                        </button>
+                    </a>
+                </td>
+                <td style="text-align: center;">
+                    <a href="https://za.pinterest.com/PalmVentures/palm-ventures" target="_blank">
+                        <button style="background-color: white; border: 2px solid red; padding: 10px; cursor: pointer;"
+                                onmouseover="this.style.backgroundColor='#ffcccc'; this.style.borderColor='red';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.borderColor='red';">
+                            <img src="icon_pintrestlogo2.png" alt="Pinterest" width="32" height="32">
+                        </button>
+                    </a>
+                </td>
+                <td style="text-align: center;">
+                    <a href="https://www.linktr.ee/PalmVentures" target="_blank">
+                        <button style="background-color: white; border: 2px solid #004d00; padding: 10px; cursor: pointer;"
+                                onmouseover="this.style.backgroundColor='#90EE90'; this.style.borderColor='#004d00';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#004d00';">
+                            <img src="icon_limktreelogo2.png" alt="Linktree" width="32" height="32">
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+
+        <!-- QR and Coin Images -->
+        <table style="width: 100%; margin: 20px 0;">
+            <tr>
+                <td style="text-align: center;">
+                    <a href="https://linktr.ee/PalmVentures" target="_blank">
+                        <img src="palmventures_qr.png" 
+                             alt="Palm Ventures | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization |Palm Ventures | Crypto  Staking" 
+                             title="Palm Ventures | Crypto Investment" width="150" height="150">
+                    </a>
+                </td>
+                <td style="text-align: center;">
+                    <a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump" target="_blank">
+                        <img src="coin7.jpg" 
+                             alt="$VISTA | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization |Palm Ventures | Crypto Staking  | Gold Crypto Coin with Palm tree | Veni Vedi Vici" 
+                             title="$VISTA | Golden Crypto Coin" width="150" height="150">
+                    </a>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Footer Text -->
+
+        <p style="font-family: Tahoma; font-size: 18px; text-align: left; margin: 20px 0;">
+            Palm Ventures | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
+        </p>
+
+
+        <!-- Gallery Placeholder -->
+        <!-- table -->
+        <table style="width: 100%; margin: 40px 0; border-collapse: collapse;">
+            <tr>
+                <td style="width: 50%; padding: 10px; text-align: center; background-color: #f0f0f0; border: 1px solid navy;">
+                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
+                </td>
+                <td style="width: 50%; padding: 10px; text-align: center; background-color: #f0f0f0; border: 1px solid navy;">
+                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
+                </td>
+            </tr>
+        </table>
+        <!-- /table -->
+
+        <!-- Footer -->
+        <p style="font-family: Tahoma; font-size: 14px; text-align: center; margin: 20px 0;">
+            This website is the property of Paradise Investments IBC, copyright 2025
+        </p>
+    </div>
+
+    <!-- Commercial Rental Placeholders -->
+    <div class="commercial-sidebar">
+        <div class="commercial-placeholder">
+            <a href="https://www.linktr.ee/PalmVentures" target="_blank">
+                Contact owner to advertise your business here!
+            </a>
+        </div>
+        <div class="commercial-placeholder">
+            <a href="https://www.linktr.ee/PalmVentures" target="_blank">
+                Contact owner to advertise your business here!
+            </a>
+        </div>
+        <div class="commercial-placeholder">
+            <a href="https://www.linktr.ee/PalmVentures" target="_blank">
+                Contact owner to advertise your business here!
+            </a>
+        </div>
+    </div>
+
+    <!-- Inline JavaScript for Popup and Button Logic -->
+    <script>
+        const whitepaperBtn = document.getElementById('whitepaperBtn');
+        const stakingBtn = document.getElementById('stakingBtn');
+        const whitepaperPopup = document.getElementById('whitepaperPopup');
+        const readCheckbox = document.getElementById('readCheckbox');
+        const riskCheckbox = document.getElementById('riskCheckbox');
+
+        whitepaperBtn.addEventListener('click', () => {
+            whitepaperPopup.style.display = 'block';
+        });
+
+        function closePopup() {
+            whitepaperPopup.style.display = 'none';
+        }
+
+        function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                stakingBtn.disabled = false;
+                stakingBtn.style.opacity = '1';
+                stakingBtn.style.cursor = 'pointer';
+                stakingBtn.onclick = () => {
+                    window.location.href = 'https://stake.smithii.io/palmventures';
+                };
+            } else {
+                stakingBtn.disabled = true;
+                stakingBtn.style.opacity = '0.5';
+                stakingBtn.style.cursor = 'not-allowed';
+            }
+        }
+
+        readCheckbox.addEventListener('change', checkCheckboxes);
+        riskCheckbox.addEventListener('change', checkCheckboxes);
+    </script>
+</body>
+</html>
