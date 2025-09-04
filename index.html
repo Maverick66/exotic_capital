@@ -136,11 +136,6 @@
         <!-- Title -->
         <h1 style="font-family: Tahoma; font-size: 48px; text-align: center; margin: 20px 0;">EXOTIC CAPITAL INNOVATIONS</h1>
 
-        <!-- Personalized Welcome Message -->
-        <p id="welcomeMessage" style="font-family: Tahoma; font-size: 36px; text-align: center; margin: 20px 0; display: none;">
-            Welcome Guest! It’s good to have you visit us! Do you have $VISTA coins or do you need to purchase?
-        </p>
-
         <!-- Logo and Welcome Text -->
         <table style="width: 100%; margin-bottom: 20px;">
             <tr>
@@ -157,6 +152,11 @@
             </tr>
         </table>
 
+        <!-- Personalized Welcome Message -->
+        <p id="welcomeMessage" style="font-family: Tahoma; font-size: 18px; text-align: left; margin: 20px 0; display: none;">
+            Welcome Guest! It’s good to have you visit us! Do you have $VISTA coins or do you need to purchase?
+        </p>
+        
         <!-- About Section -->
         <div style="text-align: left; margin: 20px 0;">
             <p style="font-family: Verdana; font-size: 36px; margin: 0;">About us</p>
@@ -353,7 +353,7 @@
 
         // Wallet Connection and Status
         const connectWalletBtn = document.getElementById('connectWalletBtn');
-        const reconnectBtn = document.getElementById('reconnectBtn');
+        const connectBtn = document.getElementById('reconnectBtn');
         const submitWalletBtn = document.getElementById('submitWalletBtn');
         const cancelPopupBtn = document.getElementById('cancelPopupBtn');
         const buyVistaBtn = document.getElementById('buyVistaBtn');
@@ -462,13 +462,15 @@
         }
 
         connectWalletBtn.addEventListener('click', showPopup);
-        reconnectBtn.addEventListener('click', showPopup);
+        connectBtn.addEventListener('click', showPopup);
         submitWalletBtn.addEventListener('click', connectWallet);
         cancelPopupBtn.addEventListener('click', closePopup);
         whitepaperBtn.addEventListener('click', () => {
             whitepaperPopup.style.display = 'block';
-        });
+        });-->
 
+    <!-- Break-->
+        <script>
         function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
                 closePopupBtn.disabled = false;
@@ -491,7 +493,7 @@
         riskCheckbox.addEventListener('change', checkCheckboxes);
         closePopupBtn.addEventListener('click', closeWhitepaperPopup);
     </script>
-
+ <!-- Break-->
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 <script>
@@ -529,7 +531,7 @@
 
     window.addEventListener('load', checkAccess);
 </script>-->
-
+ <!-- Break-->
 
     
 
