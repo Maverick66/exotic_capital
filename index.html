@@ -23,7 +23,7 @@
             right: 10px; /* Above commercial boxes */
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 20px;
         }
         .wallet-status span {
             font-family: Tahoma;
@@ -116,11 +116,19 @@
 </head>
 <body>
     <div class="container">
-        <!-- Wallet Status and Reconnect Button -->
-        <div class="wallet-status">
-            <span id="walletStatus">Not Connected</span>
-            <button id="reconnectBtn">Reconnect Wallet</button>
-        </div>
+       !-- Wallet Status and Connect Button -->
+  <div class="wallet-status">
+    <span id="walletStatus">Not Connected</span>
+    <button id= "connectBtn" onclick="showPopup()">Connect Wallet</button>
+  </div>
+  <div id="welcomeMessage" class="welcome-message" style="display: none;"></div>
+  
+  <div id="walletPopup" class="popup">
+    <h2>Connect Phantom Wallet</h2>
+    <p>Please connect your Phantom Wallet to proceed.</p>
+    <button onclick="connectWallet()">Connect</button>
+    <button onclick="closePopup()">Cancel</button>
+  </div>
 
         <!-- Banner -->
         <img src="large_palmbanner.jpg" alt="Website Banner" width="100%" style="max-width: 1200px; height: auto;">
@@ -137,7 +145,7 @@
         <table style="width: 100%; margin-bottom: 20px;">
             <tr>
                 <td style="width: 300px; text-align: left; vertical-align: top;">
-                    <img src="exotic_logo.png" width="300" height="300" alt="Exotic Capital Innovations" title="Exotic Capital Innovations">
+                    <img src="palmventures_logo.png" width="300" height="300" alt="Exotic Capital Innovations" title="Exotic Capital Innovations">
                 </td>
                 <td style="vertical-align: top; padding-left: 20px;">
                     <p style="font-family: Tahoma; font-size: 36px; margin: 10px 0;">[Welcome Text Placeholder]</p>
@@ -158,14 +166,6 @@
         <!-- Buttons -->
         <table style="width: 100%; margin: 20px 0;">
             <tr>
-                <!--<td style="text-align: center;">
-                    <button id="connectWalletBtn" 
-                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
-                            onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
-                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
-                        Connect Wallet
-                    </button>
-                </td>-->
                 <td style="text-align: center;">
                     <button id="buyVistaBtn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
@@ -179,7 +179,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
-                        White Paper
+                        View White Paper
                     </button>
                 </td>
                 <td style="text-align: center;">
@@ -187,26 +187,26 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Palm Ventures
+                        Palm Ventures Ecosystem
                     </button>
                 </td>
                 <!-- blocker -->
                 <td style="text-align: center;">
                     <button disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;">
-                        [Ecosystem 2]
+                        Mountain Ecosystem
                     </button>
                 </td>
                 <td style="text-align: center;">
                     <button disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;">
-                        [Ecosystem 3]
+                        Life Style Ecosystem
                     </button>
                 </td>
                 <td style="text-align: center;">
                     <button disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;">
-                        [Ecosystem 4]
+                        Route 66 Ecosystem
                     </button>
                 </td>                
                 <!-- /blocker -->
@@ -251,7 +251,7 @@
                         <button style="background-color: white; border: 2px solid #007bff; padding: 10px; cursor: pointer;"
                                 onmouseover="this.style.backgroundColor='lightblue'; this.style.borderColor='#007bff';"
                                 onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#007bff';">
-                            <img src="icon_telegramlogo2.png" alt="Telegram" width="32" height="32">
+                            <img src="icon_telegramlogo2.png" alt="" width="32" height="32">
                         </button>
                     </a>
                 </td>
@@ -260,7 +260,7 @@
                         <button style="background-color: white; border: 2px solid red; padding: 10px; cursor: pointer;"
                                 onmouseover="this.style.backgroundColor='#ffcccc'; this.style.borderColor='red';"
                                 onmouseout="this.style.backgroundColor='white'; this.style.borderColor='red';">
-                            <img src="icon_pintrestlogo2.png" alt="Pinterest" width="32" height="32">
+                            <img src="icon_pintrestlogo2.png" alt="" width="32" height="32">
                         </button>
                     </a>
                 </td>
@@ -269,7 +269,7 @@
                         <button style="background-color: white; border: 2px solid #004d00; padding: 10px; cursor: pointer;"
                                 onmouseover="this.style.backgroundColor='#90EE90'; this.style.borderColor='#004d00';"
                                 onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#004d00';">
-                            <img src="icon_limktreelogo2.png" alt="Linktree" width="32" height="32">
+                            <img src="icon_limktreelogo2.png" alt="" width="32" height="32">
                         </button>
                     </a>
                 </td>
@@ -278,7 +278,7 @@
                         <button style="background-color: white; border: 2px solid black; padding: 10px; cursor: pointer;"
                                 onmouseover="this.style.backgroundColor='grey'; this.style.borderColor='black';"
                                 onmouseout="this.style.backgroundColor='white'; this.style.borderColor='black';">
-                            <img src="icon_xlogo2.png" alt="X" width="32" height="32">
+                            <img src="icon_xlogo2.png" alt="" width="32" height="32">
                         </button>
                     </a>
                 </td>
