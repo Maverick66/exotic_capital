@@ -172,9 +172,8 @@
                     <button id="buy1Btn"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
-                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';"
-                            onclick="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump;">
-                        Buy $VISTA Coins
+                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        Buy $VISTA Coins<a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump"></a>
                     </button>
                 </td>
                 <td style="text-align: center;">
@@ -190,7 +189,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Beach & Ocean Living
+                        Beach & Ocean Living<a href="palmventures.html"></a>
                     </button>
                 </td>
                 <td style="text-align: center;">
@@ -198,7 +197,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Offgrid Rural Life Styles
+                        Offgrid Rural Life Styles<a href="ruralstyle.html"></a>
                     </button>
                 </td>
                 <td style="text-align: center;">
@@ -206,7 +205,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                    Mountain Cabin Living
+                    Mountain Cabin Living<a href="cabinliving.html"></a>
                     </button>
                 </td>
                 <td style="text-align: center;">
@@ -214,7 +213,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Big Sky Life Styles
+                        Big Sky Life Styles<a href="bigsky.html"></a>
                     </button>
                 </td>                
             </tr>
@@ -325,7 +324,11 @@
 
     
     <!-- Inline JavaScript for Wallet, Popup, Logic -->
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     <!--Connect Wallet-->
+    <!-- Solana Web3.js -->
     <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
     
     <script>
@@ -433,38 +436,6 @@
         riskCheckbox.addEventListener('change', checkCheckboxes);
         closePopupBtn.addEventListener('click', closeWhitepaperPopup);
     </script>
-    
-    <!--<script>
-    /* function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                closePopupBtn.disabled = false;
-                closePopupBtn.style.opacity = '1';
-                closePopupBtn.style.cursor = 'pointer';
-            } else {
-                closePopupBtn.disabled = true;
-                closePopupBtn.style.opacity = '0.5';
-                closePopupBtn.style.cursor = 'not-allowed';
-            }
-        }
-
-        function closeWhitepaperPopup() {
-            if (!closePopupBtn.disabled) {
-                whitepaperPopup.style.display = 'none';
-            }
-        }
-
-        readCheckbox.addEventListener('change', checkCheckboxes);
-        riskCheckbox.addEventListener('change', checkCheckboxes);
-        closePopupBtn.addEventListener('click', closeWhitepaperPopup);
-    </script>-->
-
-    
-      
-    
-    
-<!--
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>*/
--->     
+   
 </body>
 </html>
