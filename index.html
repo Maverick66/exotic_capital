@@ -119,12 +119,11 @@
 <body>
     <div class="container">
        <!-- Wallet Status and Connect Button -->
-  <div class="wallet-status">
+    <div class="wallet-status">
     <span id="walletStatus">Not Connected</span>
     <button id= "connectBtn" onclick="showPopup()">Connect Wallet</button>
   </div>
 
-  
   <div id="walletPopup" class="popup">
     <h2>Connect Phantom Wallet</h2>
     <p>Please connect your Phantom Wallet to proceed.</p>
@@ -171,7 +170,7 @@
             <tr>
                 <td style="text-align: center;">
                     <button id="buyVistaBtn"
-                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
+                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         Buy $VISTA Coins
@@ -377,12 +376,12 @@
     
     
     <!--White paper popup-->
-   <script> 
+   <!--<script> 
     // Show popup when clicking "View White paper" button
     function showPopup() {
       document.getElementById('whitepaperPopup').classList.add('show');
     }
-   </script>
+   </script>-->
     <script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
         const eco1Btn = document.getElementById('eco1Btn');
