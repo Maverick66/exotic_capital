@@ -169,15 +169,16 @@
         <table style="width: 100%; margin: 20px 0;">
             <tr>
                 <td style="text-align: center;">
+                    <a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump">
                     <button id="buy1Btn"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
-                        Buy $VISTA Coins<a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump"></a>
-                    </button>
+                        Buy $VISTA Coins
+                    </button></a>
                 </td>
                 <td style="text-align: center;">
-                    <button id="whiteBtn" 
+                    <button id="whiteBtn" onclick="showWhite();"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
@@ -185,36 +186,40 @@
                     </button>
                 </td>
                 <td style="text-align: center;">
+                    <a href="palmventures.html">
                     <button id="eco1Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Beach & Ocean Living<a href="palmventures.html"></a>
-                    </button>
+                        Beach & Ocean Living
+                    </button></a>
                 </td>
                 <td style="text-align: center;">
+                    <a href="ruralstyle.html">
                     <button id="eco2Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Offgrid Rural Life Styles<a href="ruralstyle.html"></a>
-                    </button>
+                        Offgrid Rural Life Styles
+                    </button></a>
                 </td>
                 <td style="text-align: center;">
+                    <a href="cabinliving.html"
                     <button id="eco3Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                    Mountain Cabin Living<a href="cabinliving.html"></a>
-                    </button>
+                    Mountain Cabin Living
+                    </button>></a>
                 </td>
                 <td style="text-align: center;">
+                    <a href="bigsky.html">
                     <button id="eco4Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Big Sky Life Styles<a href="bigsky.html"></a>
-                    </button>
+                        Big Sky Life Styles
+                    </button></a>
                 </td>                
             </tr>
         </table>
@@ -378,14 +383,14 @@
     </script>
 
     <!--White paper popup-->
-    <!--
+    <script>  
     // Show popup when clicking "View White paper" button
-    /*function showWhite() {
+    function showWhite() {
       document.getElementById('whitepaperPopup').classList.add('show');
-    }*/
-    -->
-    <script>    
-        const whitepaperBtn = document.getElementById('whiteBtn');
+    }
+
+  
+        const whiteBtn = document.getElementById('whiteBtn');
         const eco1Btn = document.getElementById('eco1Btn');
         const eco2Btn = document.getElementById('eco2Btn');
         const eco2Btn = document.getElementById('eco3Btn');
