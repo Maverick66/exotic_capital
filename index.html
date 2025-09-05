@@ -178,12 +178,12 @@
                     </button></a>
                 </td>
                 <td style="text-align: center;">
-                    <!--<button id="whiteBtn" onclick="showWhite();"
+                   <button id="whiteBtn"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         View White Paper
-                    </button>-->
+                    </button>
                 </td>
                 <td style="text-align: center;">
                     <a href="palmventures.html">
@@ -200,7 +200,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Offgrid Rural Life Styles
+                        Off grid Rural Life Styles
                     </button></a>
                 </td>
                 <td style="text-align: center;">
@@ -209,7 +209,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                    Mountain & Cabin Living
+                    Mountain & Log Cabin Living
                     </button></a>
                 </td>
                 <td style="text-align: center;">
@@ -223,18 +223,8 @@
                 </td>                
             </tr>
         </table>
-        <button id= "whiteBtn" onclick="showWhite()">Show white</button>
-        <!-- Whitepaper Popup -->
-  <div id="WhitePopup" class="popup">
-    <h2>White Paper</h2>
-    <p>Please read our white paper</p>
-    <embed src="whitepaper.pdf" type="application/pdf" width="600" height="600">
-    <button onclick="connectWallet()">Connect</button>
-    <button onclick="closewhite()">Cancel</button>
-  </div>
-
-        
-  <!--      <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
+  
+        <div id="whitePopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
             <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
             <div style="margin-top: 10px;">
                 <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
@@ -245,7 +235,7 @@
                 </button>
             </div>
         </div>
--->
+
         <!-- Social Icons -->
         <table style="width: 100%; margin: 20px 0;">
             <tr>
@@ -392,14 +382,14 @@
     </script>
 
     <!--White paper popup-->
-    <script>  
-    // Show popup when clicking "Show White" button
+    <script>
+/*    // Show popup when clicking "Show White" button
     function showWhite() {
       document.getElementById('whitePopup').classList.add('show');
     }
-
+*/
   
-       /* const whiteBtn = document.getElementById('whiteBtn');
+       const whiteBtn = document.getElementById('whiteBtn');
         const eco1Btn = document.getElementById('eco1Btn');
         const eco2Btn = document.getElementById('eco2Btn');
         const eco2Btn = document.getElementById('eco3Btn');
@@ -410,21 +400,21 @@
         const riskCheckbox = document.getElementById('riskCheckbox');
 
         whiteBtn.addEventListener('click', () => {
-            whitepaperPopup.style.display = 'block';
+            whitePopup.style.display = 'block';
         });
-*/
+
         function closeWhite() {
             whitePopup.style.display = 'none';
         }
 
-/*        function checkCheckboxes() {
+       function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
                 closeWhiteBtn.disabled = false;
                 closeWhiteBtn.style.opacity = '1';
                 closeWhiteBtn.style.cursor = 'pointer';
 /*            /*eco1Btn.onclick = () => {
                    window.location.href = 'plamventures.html';
-*/ /*              };
+*/               };
             } else {
                 closeWhiteBtn.disabled = true;
                 closeWhiteBtn.style.opacity = '0.5';
@@ -450,7 +440,7 @@
         readCheckbox.addEventListener('change', checkCheckboxes);
         riskCheckbox.addEventListener('change', checkCheckboxes);
         closeWhiteBtn.addEventListener('click', closeWhitepaperPopup);  
-*/    
+ 
     </script>
    
 </body>
