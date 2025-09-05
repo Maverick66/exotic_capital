@@ -187,7 +187,7 @@
                 </td>
                 <td style="text-align: center;">
                     <a href="palmventures.html">
-                    <button id="ecoBtn" disabled
+                    <button id="eco1Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
@@ -196,30 +196,30 @@
                 </td>
                 <td style="text-align: center;">
                     <a href="ruralstyle.html">
-                    <button id="ecoBtn" disabled
+                    <button id="eco2Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Off grid Rural Life Styles
+                        Offgrid Rural LifeStyles
                     </button></a>
                 </td>
                 <td style="text-align: center;">
                     <a href="bigsky.html">
-                    <button id="ecoBtn" disabled
+                    <button id="eco3Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Mountain Cabin Life Styles
+                        Mountain   LifeStyles
                     </button></a>                    
 
                 </td>
                 <td style="text-align: center;">
                     <a href="bigsky.html">
-                    <button id="ecoBtn" disabled
+                    <button id="eco4Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Big Sky Life Styles
+                        Big Sky LifeStyles
                     </button></a>
                 </td>                
             </tr>
@@ -386,7 +386,7 @@
     <!-- Inline JavaScript for Popup and Button Logic -->
     <script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
-        const ecoBtn = document.getElementById('ecoBtn');
+        const eco1Btn = document.getElementById('ecoBtn');
         const whitepaperPopup = document.getElementById('whitepaperPopup');
         const readCheckbox = document.getElementById('readCheckbox');
         const riskCheckbox = document.getElementById('riskCheckbox');
@@ -399,25 +399,25 @@
             whitepaperPopup.style.display = 'none';
         }
 
-        function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                ecoBtn.disabled = false;
-                ecoBtn.style.opacity = '1';
-                ecoBtn.style.cursor = 'pointer';
+function checkCheckboxes() {
+    const isChecked = readCheckbox.checked && riskCheckbox.checked;
+    
+    [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
+        btn.disabled = !isChecked;
+        btn.style.opacity = isChecked ? '1' : '0.5';
+        btn.style.cursor = isChecked ? 'pointer' : 'not-allowed';
+    });
 
-            } else {
-                ecoBtn.disabled = true;
-                ecoBtn.style.opacity = '0.5';
-                ecoBtn.style.cursor = 'not-allowed';
-            }
-        }
+    eco1Btn.onclick = isChecked ? () => { window.location.href = 'palmventures.html'; } : null;
+    eco2Btn.onclick = isChecked ? () => { window.location.href = 'page2.html'; } : null;
+    eco3Btn.onclick = isChecked ? () => { window.location.href = 'page3.html'; } : null;
+    eco4Btn.onclick = isChecked ? () => { window.location.href = 'page4.html'; } : null;
+}
+                    
 
         readCheckbox.addEventListener('change', checkCheckboxes);
         riskCheckbox.addEventListener('change', checkCheckboxes);
     </script>
-/*                 ecoBtn.onclick = () => {
-                    window.location.href = 'palmventures.html';
-                };
-*/   
+
 </body>
 </html>
