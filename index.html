@@ -187,7 +187,7 @@
                 </td>
                 <td style="text-align: center;">
                     <a href="palmventures.html">
-                    <button id="eco1Btn" disabled
+                    <button id="ecoBtn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
@@ -196,7 +196,7 @@
                 </td>
                 <td style="text-align: center;">
                     <a href="ruralstyle.html">
-                    <button id="eco2Btn" disabled
+                    <button id="ecoBtn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
@@ -205,7 +205,7 @@
                 </td>
                 <td style="text-align: center;">
                     <a href="bigsky.html">
-                    <button id="eco3Btn" disabled
+                    <button id="ecoBtn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
@@ -215,7 +215,7 @@
                 </td>
                 <td style="text-align: center;">
                     <a href="bigsky.html">
-                    <button id="eco4Btn" disabled
+                    <button id="ecoBtn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
@@ -386,10 +386,7 @@
     <!-- Inline JavaScript for Popup and Button Logic -->
     <script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
-        const eco1Btn = document.getElementById('eco1Btn');
-        const eco2Btn = document.getElementById('eco2Btn');
-        const eco3Btn = document.getElementById('eco3Btn');
-
+        const ecoBtn = document.getElementById('eco1Btn');
         const whitepaperPopup = document.getElementById('whitepaperPopup');
         const readCheckbox = document.getElementById('readCheckbox');
         const riskCheckbox = document.getElementById('riskCheckbox');
@@ -404,68 +401,23 @@
 
         function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
-                eco1Btn.disabled = false;
-                eco1Btn.style.opacity = '1';
-                eco1Btn.style.cursor = 'pointer';
-                eco1Btn.onclick = () => {
-                    window.location.href = 'palmventures.html';
-                };
-            } else {
-                eco1Btn.disabled = true;
-                eco1Btn.style.opacity = '0.5';
-                eco1Btn.style.cursor = 'not-allowed';
-            }
-        }
+                ecoBtn.disabled = false;
+                ecoBtn.style.opacity = '1';
+                ecoBtn.style.cursor = 'pointer';
 
-        function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                eco2Btn.disabled = false;
-                eco2Btn.style.opacity = '1';
-                eco2Btn.style.cursor = 'pointer';
-                eco2Btn.onclick = () => {
-                    window.location.href = 'palmventures.html';
-                };
             } else {
-                eco2Btn.disabled = true;
-                eco2Btn.style.opacity = '0.5';
-                eco2Btn.style.cursor = 'not-allowed';
-            }
-        }
-
-        function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                eco3Btn.disabled = false;
-                eco3Btn.style.opacity = '1';
-                eco3Btn.style.cursor = 'pointer';
-                eco3Btn.onclick = () => {
-                    window.location.href = 'palmventures.html';
-                };
-            } else {
-                eco3Btn.disabled = true;
-                eco3Btn.style.opacity = '0.5';
-                eco3Btn.style.cursor = 'not-allowed';
-            }
-        }
-
-        function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                eco4Btn.disabled = false;
-                eco4Btn.style.opacity = '1';
-                eco4Btn.style.cursor = 'pointer';
-                eco4Btn.onclick = () => {
-                    window.location.href = 'palmventures.html';
-                };
-            } else {
-                eco4Btn.disabled = true;
-                eco4Btn.style.opacity = '0.5';
-                eco4Btn.style.cursor = 'not-allowed';
+                ecoBtn.disabled = true;
+                ecoBtn.style.opacity = '0.5';
+                ecoBtn.style.cursor = 'not-allowed';
             }
         }
 
         readCheckbox.addEventListener('change', checkCheckboxes);
         riskCheckbox.addEventListener('change', checkCheckboxes);
     </script>
-
-   
+/*                 ecoBtn.onclick = () => {
+                    window.location.href = 'palmventures.html';
+                };
+*/   
 </body>
 </html>
