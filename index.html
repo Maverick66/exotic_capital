@@ -207,7 +207,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                    Cabin & Mountain Living
+                    Mountain Cabin Living
                     </button>
                 </td>
                 <td style="text-align: center;">
@@ -344,8 +344,63 @@
 
     
     <!-- Inline JavaScript for Wallet, Popup, Logic -->
+     <!--Connect Wallet-->
+    
+    <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
+    <script>
+    // Show popup on page load
+    window.onload = () => {
+      document.getElementById('walletPopup').classList.add('show');
+    };
+
+    // Show popup when clicking "Connect Wallet" button
+    function showPopup() {
+      document.getElementById('walletPopup').classList.add('show');
+    }
+
+    // Close popup without action
+    function closePopup() {
+      document.getElementById('walletPopup').classList.remove('show');
+    }
+
+    // Connect to Phantom Wallet
+    async function connectWallet() {
+      try {
+        const { solana } = window;
+        if (!solana || !solana.isPhantom) {
+          alert('Please install Phantom Wallet extension.');
+          return;
+        }
+        // Connect to wallet
+        await solana.connect();
+        const publicKey = solana.publicKey.toString();
+        const shortAddress = publicKey.slice(0, 4) + '...' + publicKey.slice(-4);
+        // Update wallet status
+        document.getElementById('walletStatus').textContent = `Connected: ${shortAddress}`;
+        // Show welcome message (using short address as name placeholder)
+        const userName = 'Andy'; // Replace with dynamic name if available
+        document.getElementById('welcomeMessage').textContent = 
+          `Welcome ${userName}! It's good to have you with us! Do you have $VISTA coins or do you need to purchase?`;
+        document.getElementById('welcomeMessage').style.display = 'block';
+        // Close popup
+        closePopup();
+        // Store connection status (public key only, no sensitive data)
+        localStorage.setItem('walletConnected', publicKey);
+      } catch (error) {
+        console.error('Wallet connection failed:', error);
+        alert('Failed to connect wallet. Please try again.');
+      }
+    }
+    </script>
+    
     
     <!--White paper popup-->
+   <script> 
+    // Show popup when clicking "View White paper" button
+    function showPopup() {
+      document.getElementById('whitepaperPopup').classList.add('show');
+    }
+   </script>
     <script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
         const eco1Btn = document.getElementById('eco1Btn');
@@ -543,7 +598,7 @@
         
     
     
- <!-- Break-->
+    <!-- Break-->
     <!--<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     <script>
@@ -583,52 +638,6 @@
     </script>-->-->
  <!-- Break-->
     
-    <!--Connect Wallet-->
-    <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
-    <script>
-    // Show popup on page load
-    window.onload = () => {
-      document.getElementById('walletPopup').classList.add('show');
-    };
-
-    // Show popup when clicking "Connect Wallet" button
-    function showPopup() {
-      document.getElementById('walletPopup').classList.add('show');
-    }
-
-    // Close popup without action
-    function closePopup() {
-      document.getElementById('walletPopup').classList.remove('show');
-    }
-
-    // Connect to Phantom Wallet
-    async function connectWallet() {
-      try {
-        const { solana } = window;
-        if (!solana || !solana.isPhantom) {
-          alert('Please install Phantom Wallet extension.');
-          return;
-        }
-        // Connect to wallet
-        await solana.connect();
-        const publicKey = solana.publicKey.toString();
-        const shortAddress = publicKey.slice(0, 4) + '...' + publicKey.slice(-4);
-        // Update wallet status
-        document.getElementById('walletStatus').textContent = `Connected: ${shortAddress}`;
-        // Show welcome message (using short address as name placeholder)
-        const userName = 'Andy'; // Replace with dynamic name if available
-        document.getElementById('welcomeMessage').textContent = 
-          `Welcome ${userName}! It's good to have you with us! Do you have $VISTA coins or do you need to purchase?`;
-        document.getElementById('welcomeMessage').style.display = 'block';
-        // Close popup
-        closePopup();
-        // Store connection status (public key only, no sensitive data)
-        localStorage.setItem('walletConnected', publicKey);
-      } catch (error) {
-        console.error('Wallet connection failed:', error);
-        alert('Failed to connect wallet. Please try again.');
-      }
-    }
-  </script>
+   
 </body>
 </html>
