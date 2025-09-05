@@ -178,12 +178,12 @@
                     </button></a>
                 </td>
                 <td style="text-align: center;">
-                    <button id="whiteBtn" onclick="showWhite();"
+                    <!--<button id="whiteBtn" onclick="showWhite();"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         View White Paper
-                    </button>
+                    </button>-->
                 </td>
                 <td style="text-align: center;">
                     <a href="palmventures.html">
@@ -210,7 +210,7 @@
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
                     Mountain Cabin Living
-                    </button>></a>
+                    </button></a>
                 </td>
                 <td style="text-align: center;">
                     <a href="bigsky.html">
@@ -223,7 +223,7 @@
                 </td>                
             </tr>
         </table>
-
+        <button id= "whiteBtn" onclick="showWhite()">Show whitet</button>
         <!-- Whitepaper Popup -->
         <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
             <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
@@ -384,13 +384,13 @@
 
     <!--White paper popup-->
     <script>  
-    // Show popup when clicking "View White paper" button
+    // Show popup when clicking "Show White" button
     function showWhite() {
       document.getElementById('whitepaperPopup').classList.add('show');
     }
 
   
-        const whiteBtn = document.getElementById('whiteBtn');
+       /* const whiteBtn = document.getElementById('whiteBtn');
         const eco1Btn = document.getElementById('eco1Btn');
         const eco2Btn = document.getElementById('eco2Btn');
         const eco2Btn = document.getElementById('eco3Btn');
@@ -402,19 +402,19 @@
         whiteBtn.addEventListener('click', () => {
             whitepaperPopup.style.display = 'block';
         });
-
+*/
         function closePopup() {
             whitepaperPopup.style.display = 'none';
         }
 
-        function checkCheckboxes() {
+/*        function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
                 closePopupBtn.disabled = false;
                 closePopupBtn.style.opacity = '1';
                 closePopupBtn.style.cursor = 'pointer';
-                /*eco1Btn.onclick = () => {
-                    window.location.href = 'plamventures.html';*/
-                };
+/*            /*eco1Btn.onclick = () => {
+                   window.location.href = 'plamventures.html';
+*/ /*              };
             } else {
                 closePopupBtn.disabled = true;
                 closePopupBtn.style.opacity = '0.5';
@@ -439,7 +439,8 @@
         
         readCheckbox.addEventListener('change', checkCheckboxes);
         riskCheckbox.addEventListener('change', checkCheckboxes);
-        closePopupBtn.addEventListener('click', closeWhitepaperPopup);
+        closePopupBtn.addEventListener('click', closeWhitepaperPopup);  
+*/    
     </script>
    
 </body>
