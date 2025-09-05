@@ -161,6 +161,7 @@
         <div style="text-align: left; margin: 20px 0;">
             <p style="font-family: Verdana; font-size: 36px; margin: 0;">About us</p>
             <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">[About Exotic Capital Innovations Placeholder]</p>
+            <p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">[About Exotic Capital Innovations Placeholder]</p>
         </div>
 
         <!-- Buttons -->
@@ -183,36 +184,36 @@
                     </button>
                 </td>
                 <td style="text-align: center;">
-                    <button id="palmVenturesBtn" disabled
+                    <button id="eco1Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Beach & Ocean Ecosystem
+                        Beach & Ocean Living
                     </button>
                 </td>
                 <!-- blocker -->
                 <td style="text-align: center;">
-                    <button id="mountainBtn" disabled
+                    <button id="eco2Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Mountain Ecosystem
+                        Offgrid Rural Life Styles
                     </button>
                 </td>
                 <td style="text-align: center;">
-                    <button id="lifestyleBtn" disabled
+                    <button id="eco3Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Life Style Ecosystem
+                    Cabin & Mountain Living
                     </button>
                 </td>
                 <td style="text-align: center;">
-                    <button id="route66Btn" disabled
+                    <button id="eco4Btn" disabled
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Route 66 Ecosystem
+                        Big Sky Life Styles
                     </button>
                 </td>                
                 <!-- /blocker -->
@@ -337,7 +338,44 @@
         </div>
     </div>
 
-    <!-- Inline JavaScript for Wallet, Popup, and Payment Logic -->
+    <!-- Inline JavaScript for Wallet, Popup, Logic -->
+
+    <script>
+        const whitepaperBtn = document.getElementById('whitepaperBtn');
+        const stakingBtn = document.getElementById('eco1Btn');
+        const stakingBtn = document.getElementById('eco2Btn');
+        const stakingBtn = document.getElementById('eco3Btn');
+        const stakingBtn = document.getElementById('eco4Btn');
+        const whitepaperPopup = document.getElementById('whitepaperPopup');
+        const readCheckbox = document.getElementById('readCheckbox');
+        const riskCheckbox = document.getElementById('riskCheckbox');
+
+        whitepaperBtn.addEventListener('click', () => {
+            whitepaperPopup.style.display = 'block';
+        });
+
+        function closePopup() {
+            whitepaperPopup.style.display = 'none';
+        }
+
+        function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                stakingBtn.disabled = false;
+                stakingBtn.style.opacity = '1';
+                stakingBtn.style.cursor = 'pointer';
+                stakingBtn.onclick = () => {
+                    window.location.href = 'https://stake.smithii.io/palmventures';
+                };
+            } else {
+                stakingBtn.disabled = true;
+                stakingBtn.style.opacity = '0.5';
+                stakingBtn.style.cursor = 'not-allowed';
+            }
+        }
+
+        readCheckbox.addEventListener('change', checkCheckboxes);
+        riskCheckbox.addEventListener('change', checkCheckboxes);
+    </script>
     <!--<script>
         // Firebase Configuration
         const firebaseConfig = {
