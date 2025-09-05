@@ -178,12 +178,12 @@
                     </button></a>
                 </td>
                 <td style="text-align: center;">
-                   <button id="whiteBtn"
+                   <!--<button id="whiteBtn"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         View White Paper
-                    </button>
+                    </button>-->
                 </td>
                 <td style="text-align: center;">
                     <a href="palmventures.html">
@@ -224,7 +224,7 @@
             </tr>
         </table>
   
-        <div id="whitePopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
+        <!--<div id="whitePopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
             <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
             <div style="margin-top: 10px;">
                 <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
@@ -234,7 +234,7 @@
                     Close
                 </button>
             </div>
-        </div>
+        </div>-->
 
         <!-- Social Icons -->
         <table style="width: 100%; margin: 20px 0;">
@@ -382,66 +382,7 @@
     </script>
 
     <!--White paper popup-->
-    <script>
-/*    // Show popup when clicking "Show White" button
-    function showWhite() {
-      document.getElementById('whitePopup').classList.add('show');
-    }
-*/
-  
-       const whiteBtn = document.getElementById('whiteBtn');
-        const eco1Btn = document.getElementById('eco1Btn');
-        const eco2Btn = document.getElementById('eco2Btn');
-        const eco2Btn = document.getElementById('eco3Btn');
-        const eco4Btn = document.getElementById('eco4Btn');
-        const closeWhiteBtn =document.getElementById('closeWhiteBtn');
-        const whitepaperPopup = document.getElementById('whitepaperPopup');
-        const readCheckbox = document.getElementById('readCheckbox');
-        const riskCheckbox = document.getElementById('riskCheckbox');
 
-        whiteBtn.addEventListener('click', () => {
-            whitePopup.style.display = 'block';
-        });
-
-        function closeWhite() {
-            whitePopup.style.display = 'none';
-        }
-
-       function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                closeWhiteBtn.disabled = false;
-                closeWhiteBtn.style.opacity = '1';
-                closeWhiteBtn.style.cursor = 'pointer';
-/*            /*eco1Btn.onclick = () => {
-                   window.location.href = 'plamventures.html';
-*/               };
-            } else {
-                closeWhiteBtn.disabled = true;
-                closeWhiteBtn.style.opacity = '0.5';
-                closeWhiteBtn.style.cursor = 'not-allowed';
-            }
-        }
-        // eco1 button
-                function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                eco1Btn.disabled = false;
-                eco1Btn.style.opacity = '1';
-                eco1Btn.style.cursor = 'pointer';
-                eco1Btn.onclick = () => {
-                    window.location.href = 'palmventures.html';
-                };
-            } else {
-                eco1Btn.disabled = true;
-                eco1Btn.style.opacity = '0.5';
-                eco1Btn.style.cursor = 'not-allowed';
-            }
-        }
-        
-        readCheckbox.addEventListener('change', checkCheckboxes);
-        riskCheckbox.addEventListener('change', checkCheckboxes);
-        closeWhiteBtn.addEventListener('click', closeWhitepaperPopup);  
- 
-    </script>
    
 </body>
 </html>
