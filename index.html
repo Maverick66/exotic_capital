@@ -223,14 +223,14 @@
                 </td>                
             </tr>
         </table>
-        <button id= "whiteBtn" onclick="showWhite()">Show whitet</button>
+        <button id= "whiteBtn" onclick="showWhite()">Show white</button>
         <!-- Whitepaper Popup -->
         <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
             <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
             <div style="margin-top: 10px;">
                 <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
                 <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
-                <button id="closePopupBtn" disabled 
+                <button id="closeWhiteBtn" disabled 
                         style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top: 10px; opacity: 0.5; cursor: not-allowed;">
                     Close
                 </button>
@@ -395,6 +395,7 @@
         const eco2Btn = document.getElementById('eco2Btn');
         const eco2Btn = document.getElementById('eco3Btn');
         const eco4Btn = document.getElementById('eco4Btn');
+        const closeWhiteBtn =document.getElementById('closeWhiteBtn');
         const whitepaperPopup = document.getElementById('whitepaperPopup');
         const readCheckbox = document.getElementById('readCheckbox');
         const riskCheckbox = document.getElementById('riskCheckbox');
@@ -403,22 +404,22 @@
             whitepaperPopup.style.display = 'block';
         });
 */
-        function closePopup() {
+        function closeWhite() {
             whitepaperPopup.style.display = 'none';
         }
 
 /*        function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
-                closePopupBtn.disabled = false;
-                closePopupBtn.style.opacity = '1';
-                closePopupBtn.style.cursor = 'pointer';
+                closeWhiteBtn.disabled = false;
+                closeWhiteBtn.style.opacity = '1';
+                closeWhiteBtn.style.cursor = 'pointer';
 /*            /*eco1Btn.onclick = () => {
                    window.location.href = 'plamventures.html';
 */ /*              };
             } else {
-                closePopupBtn.disabled = true;
-                closePopupBtn.style.opacity = '0.5';
-                closePopupBtn.style.cursor = 'not-allowed';
+                closeWhiteBtn.disabled = true;
+                closeWhiteBtn.style.opacity = '0.5';
+                closeWhiteBtn.style.cursor = 'not-allowed';
             }
         }
         // eco1 button
@@ -439,7 +440,7 @@
         
         readCheckbox.addEventListener('change', checkCheckboxes);
         riskCheckbox.addEventListener('change', checkCheckboxes);
-        closePopupBtn.addEventListener('click', closeWhitepaperPopup);  
+        closeWhiteBtn.addEventListener('click', closeWhitepaperPopup);  
 */    
     </script>
    
