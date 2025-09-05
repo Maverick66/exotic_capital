@@ -178,12 +178,6 @@
                     </button></a>
                 </td>
                 <td style="text-align: center;">
-                   <!--<button id="whiteBtn"
-                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
-                            onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
-                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
-                        View White Paper
-                    </button>-->
                     <button id="whitepaperBtn" 
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
@@ -230,22 +224,10 @@
                 </td>                
             </tr>
         </table>
-  
-        <!--<div id="whitePopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%;">
-            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
-            <div style="margin-top: 10px;">
-                <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
-                <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
-                <button id="closeWhiteBtn" disabled 
-                        style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top: 10px; opacity: 0.5; cursor: not-allowed;">
-                    Close
-                </button>
-            </div>
-        </div>-->
-        
+
         <!-- Whitepaper Popup -->
         <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white;  padding: 20px; border: 2px solid navy; max-width: 80%;">
-            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="600">
+            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
             <div style="margin-top: 10px;">
                 <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
                 <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
@@ -404,7 +386,7 @@
     <!-- Inline JavaScript for Popup and Button Logic -->
     <script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
-        const stakingBtn = document.getElementById('stakingBtn');
+        const eco1Btn = document.getElementById('eco1Btn');
         const whitepaperPopup = document.getElementById('whitepaperPopup');
         const readCheckbox = document.getElementById('readCheckbox');
         const riskCheckbox = document.getElementById('riskCheckbox');
@@ -419,16 +401,16 @@
 
         function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
-                stakingBtn.disabled = false;
-                stakingBtn.style.opacity = '1';
-                stakingBtn.style.cursor = 'pointer';
-                stakingBtn.onclick = () => {
-                    window.location.href = 'https://stake.smithii.io/palmventures';
+                eco1Btn.disabled = false;
+                eco1Btn.style.opacity = '1';
+                eco1Btn.style.cursor = 'pointer';
+                eco1Btn.onclick = () => {
+                    window.location.href = 'palmventures.html';
                 };
             } else {
-                stakingBtn.disabled = true;
-                stakingBtn.style.opacity = '0.5';
-                stakingBtn.style.cursor = 'not-allowed';
+                eco1Btn.disabled = true;
+                eco1Btn.style.opacity = '0.5';
+                eco1Btn.style.cursor = 'not-allowed';
             }
         }
 
