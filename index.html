@@ -169,19 +169,19 @@
         <table style="width: 100%; margin: 20px 0;">
             <tr>
                 <td style="text-align: center;">
-                    <button id="buyVistaBtn"
+                    <button id="buy1Btn"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
-                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';"
+                            onclick="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump;">
                         Buy $VISTA Coins
                     </button>
                 </td>
                 <td style="text-align: center;">
-                    <button id="whitepaperBtn" 
+                    <button id="whiteBtn" 
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
-                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';"
-                            onclick="showWhite();">
+                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         View White Paper
                     </button>
                 </td>
@@ -325,9 +325,9 @@
 
     
     <!-- Inline JavaScript for Wallet, Popup, Logic -->
-     <!--Connect Wallet-->
-    
+    <!--Connect Wallet-->
     <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
+    
     <script>
     // Show popup on page load
     window.onload = () => {
@@ -373,16 +373,16 @@
       }
     }
     </script>
-    
-    
-    <!--White paper popup-->
-   <script> 
-    // Show popup when clicking "View White paper" button
-    function showWhite() {
-      document.getElementById('whitepaperPopup').classList.add('show');
-    }
 
-        const whitepaperBtn = document.getElementById('whitepaperBtn');
+    <!--White paper popup-->
+    <!--
+    // Show popup when clicking "View White paper" button
+    /*function showWhite() {
+      document.getElementById('whitepaperPopup').classList.add('show');
+    }*/
+    -->
+    <script>    
+        const whitepaperBtn = document.getElementById('whiteBtn');
         const eco1Btn = document.getElementById('eco1Btn');
         const eco2Btn = document.getElementById('eco2Btn');
         const eco2Btn = document.getElementById('eco3Btn');
@@ -391,7 +391,7 @@
         const readCheckbox = document.getElementById('readCheckbox');
         const riskCheckbox = document.getElementById('riskCheckbox');
 
-        whitepaperBtn.addEventListener('click', () => {
+        whiteBtn.addEventListener('click', () => {
             whitepaperPopup.style.display = 'block';
         });
 
@@ -401,11 +401,26 @@
 
         function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
+                closePopupBtn.disabled = false;
+                closePopupBtn.style.opacity = '1';
+                closePopupBtn.style.cursor = 'pointer';
+                /*eco1Btn.onclick = () => {
+                    window.location.href = 'plamventures.html';*/
+                };
+            } else {
+                closePopupBtn.disabled = true;
+                closePopupBtn.style.opacity = '0.5';
+                closePopupBtn.style.cursor = 'not-allowed';
+            }
+        }
+        // eco1 button
+                function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
                 eco1Btn.disabled = false;
                 eco1Btn.style.opacity = '1';
                 eco1Btn.style.cursor = 'pointer';
                 eco1Btn.onclick = () => {
-                    window.location.href = 'plamventures.html';
+                    window.location.href = 'palmventures.html';
                 };
             } else {
                 eco1Btn.disabled = true;
@@ -413,13 +428,14 @@
                 eco1Btn.style.cursor = 'not-allowed';
             }
         }
-
+        
         readCheckbox.addEventListener('change', checkCheckboxes);
         riskCheckbox.addEventListener('change', checkCheckboxes);
+        closePopupBtn.addEventListener('click', closeWhitepaperPopup);
     </script>
     
     <!--<script>
-        function checkCheckboxes() {
+    /* function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
                 closePopupBtn.disabled = false;
                 closePopupBtn.style.opacity = '1';
@@ -448,7 +464,7 @@
     
 <!--
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>*/
 -->     
 </body>
 </html>
