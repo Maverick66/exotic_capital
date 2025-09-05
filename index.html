@@ -386,7 +386,10 @@
     <!-- Inline JavaScript for Popup and Button Logic -->
     <script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
-        const eco1Btn = document.getElementById('ecoBtn');
+        const eco1Btn = document.getElementById('eco1Btn');
+        const eco2Btn = document.getElementById('eco2Btn');
+        const eco3Btn = document.getElementById('eco3Btn');
+        const eco4Btn = document.getElementById('eco4Btn');
         const whitepaperPopup = document.getElementById('whitepaperPopup');
         const readCheckbox = document.getElementById('readCheckbox');
         const riskCheckbox = document.getElementById('riskCheckbox');
@@ -399,25 +402,47 @@
             whitepaperPopup.style.display = 'none';
         }
 
-function checkCheckboxes() {
-    const isChecked = readCheckbox.checked && riskCheckbox.checked;
-    
-    [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
-        btn.disabled = !isChecked;
-        btn.style.opacity = isChecked ? '1' : '0.5';
-        btn.style.cursor = isChecked ? 'pointer' : 'not-allowed';
-    });
+        function checkCheckboxes() {
+          
+        if ( readCheckbox.checked && riskCheckbox.checked){
+        [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        btn.style.cursor = 'pointer';
+        eco1Btn.onclick = () => { window.location.href = 'palmventures.html'; } : null;
+        eco2Btn.onclick = () => { window.location.href = 'page2.html'; } : null;
+        eco3Btn.onclick = () => { window.location.href = 'page3.html'; } : null;
+        eco4Btn.onclick = () => { window.location.href = 'page4.html'; } : null;});
 
-    eco1Btn.onclick = isChecked ? () => { window.location.href = 'palmventures.html'; } : null;
-    eco2Btn.onclick = isChecked ? () => { window.location.href = 'page2.html'; } : null;
-    eco3Btn.onclick = isChecked ? () => { window.location.href = 'page3.html'; } : null;
-    eco4Btn.onclick = isChecked ? () => { window.location.href = 'page4.html'; } : null;
-}
-                    
+        } else {
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+                btn.style.cursor = 'not-allowed';
+            }
+        }                    
 
         readCheckbox.addEventListener('change', checkCheckboxes);
         riskCheckbox.addEventListener('change', checkCheckboxes);
+        
     </script>
+
+           <!-- function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                stakingBtn.disabled = false;
+                stakingBtn.style.opacity = '1';
+                stakingBtn.style.cursor = 'pointer';
+                stakingBtn.onclick = () => {
+                    window.location.href = 'https://stake.smithii.io/palmventures';
+                };
+            } else {
+                stakingBtn.disabled = true;
+                stakingBtn.style.opacity = '0.5';
+                stakingBtn.style.cursor = 'not-allowed';
+            }
+        }
+
+        readCheckbox.addEventListener('change', checkCheckboxes);
+        riskCheckbox.addEventListener('change', checkCheckboxes);-->
 
 </body>
 </html>
