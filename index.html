@@ -184,6 +184,12 @@
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         View White Paper
                     </button>-->
+                    <button id="whitepaperBtn" 
+                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 150px;"
+                            onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        View White Paper
+                    </button>
                 </td>
                 <td style="text-align: center;">
                     <a href="palmventures.html">
@@ -236,7 +242,19 @@
                 </button>
             </div>
         </div>-->
+        
+        <!-- Whitepaper Popup -->
+        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white;  padding: 20px; border: 2px solid navy; max-width: 80%;">
+            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="600">
+            <div style="margin-top: 10px;">
+                <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
+                <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
+                <button onclick="closeWhitePopup()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top:  10px;">Close</button>
+            </div>
+        </div>
 
+
+        
         <!-- Social Icons -->
         <table style="width: 100%; margin: 20px 0;">
             <tr>
@@ -382,7 +400,41 @@
     }
     </script>
 
-    <!--White paper popup-->
+    <!--White paper-->
+    <!-- Inline JavaScript for Popup and Button Logic -->
+    <script>
+        const whitepaperBtn = document.getElementById('whitepaperBtn');
+        const stakingBtn = document.getElementById('stakingBtn');
+        const whitepaperPopup = document.getElementById('whitepaperPopup');
+        const readCheckbox = document.getElementById('readCheckbox');
+        const riskCheckbox = document.getElementById('riskCheckbox');
+
+        whitepaperBtn.addEventListener('click', () => {
+            whitepaperPopup.style.display = 'block';
+        });
+
+        function closeWhitePopup() {
+            whitepaperPopup.style.display = 'none';
+        }
+
+        function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                stakingBtn.disabled = false;
+                stakingBtn.style.opacity = '1';
+                stakingBtn.style.cursor = 'pointer';
+                stakingBtn.onclick = () => {
+                    window.location.href = 'https://stake.smithii.io/palmventures';
+                };
+            } else {
+                stakingBtn.disabled = true;
+                stakingBtn.style.opacity = '0.5';
+                stakingBtn.style.cursor = 'not-allowed';
+            }
+        }
+
+        readCheckbox.addEventListener('change', checkCheckboxes);
+        riskCheckbox.addEventListener('change', checkCheckboxes);
+    </script>
 
    
 </body>
