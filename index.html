@@ -108,11 +108,13 @@
             margin: 0 0 10px;
         }
     </style>
+    
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     <!-- Solana Web3.js -->
     <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -314,10 +316,12 @@
         </p>
 
         <!-- Footer -->
+        <footer>
         <p style="font-family: Tahoma; font-size: 14px; text-align: center; margin: 20px 0;">
             This website is the property of Exotic Capital Innovations IBC, copyright 2025
         </p>
-    </div>
+        </div>
+        </footer>
 
     <!-- Commercial Rental Placeholders -->
     <div class="commercial-sidebar">
@@ -338,14 +342,16 @@
         </div>
     </div>
 
+    
     <!-- Inline JavaScript for Wallet, Popup, Logic -->
-
+    
+    <!--White paper popup-->
     <script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
-        const stakingBtn = document.getElementById('eco1Btn');
-        const stakingBtn = document.getElementById('eco2Btn');
-        const stakingBtn = document.getElementById('eco3Btn');
-        const stakingBtn = document.getElementById('eco4Btn');
+        const eco1Btn = document.getElementById('eco1Btn');
+        const eco2Btn = document.getElementById('eco2Btn');
+        const eco2Btn = document.getElementById('eco3Btn');
+        const eco4Btn = document.getElementById('eco4Btn');
         const whitepaperPopup = document.getElementById('whitepaperPopup');
         const readCheckbox = document.getElementById('readCheckbox');
         const riskCheckbox = document.getElementById('riskCheckbox');
@@ -360,22 +366,48 @@
 
         function checkCheckboxes() {
             if (readCheckbox.checked && riskCheckbox.checked) {
-                stakingBtn.disabled = false;
-                stakingBtn.style.opacity = '1';
-                stakingBtn.style.cursor = 'pointer';
-                stakingBtn.onclick = () => {
-                    window.location.href = 'https://stake.smithii.io/palmventures';
+                eco1Btn.disabled = false;
+                eco1Btn.style.opacity = '1';
+                eco1Btn.style.cursor = 'pointer';
+                eco1Btn.onclick = () => {
+                    window.location.href = 'plamventures.html';
                 };
             } else {
-                stakingBtn.disabled = true;
-                stakingBtn.style.opacity = '0.5';
-                stakingBtn.style.cursor = 'not-allowed';
+                eco1Btn.disabled = true;
+                eco1Btn.style.opacity = '0.5';
+                eco1Btn.style.cursor = 'not-allowed';
             }
         }
 
         readCheckbox.addEventListener('change', checkCheckboxes);
         riskCheckbox.addEventListener('change', checkCheckboxes);
     </script>
+    
+    <!--<script>
+        function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                closePopupBtn.disabled = false;
+                closePopupBtn.style.opacity = '1';
+                closePopupBtn.style.cursor = 'pointer';
+            } else {
+                closePopupBtn.disabled = true;
+                closePopupBtn.style.opacity = '0.5';
+                closePopupBtn.style.cursor = 'not-allowed';
+            }
+        }
+
+        function closeWhitepaperPopup() {
+            if (!closePopupBtn.disabled) {
+                whitepaperPopup.style.display = 'none';
+            }
+        }
+
+        readCheckbox.addEventListener('change', checkCheckboxes);
+        riskCheckbox.addEventListener('change', checkCheckboxes);
+        closePopupBtn.addEventListener('click', closeWhitepaperPopup);
+    </script>-->
+
+    
     <!--<script>
         // Firebase Configuration
         const firebaseConfig = {
@@ -508,33 +540,13 @@
         });-->
 
     <!-- Break-->
-        <script>
-        function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                closePopupBtn.disabled = false;
-                closePopupBtn.style.opacity = '1';
-                closePopupBtn.style.cursor = 'pointer';
-            } else {
-                closePopupBtn.disabled = true;
-                closePopupBtn.style.opacity = '0.5';
-                closePopupBtn.style.cursor = 'not-allowed';
-            }
-        }
-
-        function closeWhitepaperPopup() {
-            if (!closePopupBtn.disabled) {
-                whitepaperPopup.style.display = 'none';
-            }
-        }
-
-        readCheckbox.addEventListener('change', checkCheckboxes);
-        riskCheckbox.addEventListener('change', checkCheckboxes);
-        closePopupBtn.addEventListener('click', closeWhitepaperPopup);
-    </script>
+        
+    
+    
  <!-- Break-->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-<script>
+    <!--<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script>
     const firebaseConfig = {
         apiKey: "__firebase_config_apiKey__",
         authDomain: "__firebase_config_authDomain__",
@@ -568,16 +580,12 @@
     }
 
     window.addEventListener('load', checkAccess);
-</script>-->
+    </script>-->-->
  <!-- Break-->
-
     
-
-  <!--Footer-->
-  <footer></footer>
-
-  <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
-  <script>
+    <!--Connect Wallet-->
+    <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
+    <script>
     // Show popup on page load
     window.onload = () => {
       document.getElementById('walletPopup').classList.add('show');
