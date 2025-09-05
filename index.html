@@ -387,6 +387,9 @@
     <script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
         const eco1Btn = document.getElementById('eco1Btn');
+        const eco2Btn = document.getElementById('eco2Btn');
+        const eco3Btn = document.getElementById('eco3Btn');
+        const eco4Btn = document.getElementById('eco4Btn');
         const whitepaperPopup = document.getElementById('whitepaperPopup');
         const readCheckbox = document.getElementById('readCheckbox');
         const riskCheckbox = document.getElementById('riskCheckbox');
@@ -411,6 +414,51 @@
                 eco1Btn.disabled = true;
                 eco1Btn.style.opacity = '0.5';
                 eco1Btn.style.cursor = 'not-allowed';
+            }
+        }
+
+        function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                eco2Btn.disabled = false;
+                eco2Btn.style.opacity = '1';
+                eco2Btn.style.cursor = 'pointer';
+                eco2Btn.onclick = () => {
+                    window.location.href = 'palmventures.html';
+                };
+            } else {
+                eco2Btn.disabled = true;
+                eco2Btn.style.opacity = '0.5';
+                eco2Btn.style.cursor = 'not-allowed';
+            }
+        }
+
+                function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                eco3Btn.disabled = false;
+                eco3Btn.style.opacity = '1';
+                eco3Btn.style.cursor = 'pointer';
+                eco3Btn.onclick = () => {
+                    window.location.href = 'palmventures.html';
+                };
+            } else {
+                eco3Btn.disabled = true;
+                eco3Btn.style.opacity = '0.5';
+                eco3Btn.style.cursor = 'not-allowed';
+            }
+        }
+
+                        function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                eco4Btn.disabled = false;
+                eco4Btn.style.opacity = '1';
+                eco4Btn.style.cursor = 'pointer';
+                eco4Btn.onclick = () => {
+                    window.location.href = 'palmventures.html';
+                };
+            } else {
+                eco4Btn.disabled = true;
+                eco4Btn.style.opacity = '0.5';
+                eco4Btn.style.cursor = 'not-allowed';
             }
         }
 
