@@ -200,7 +200,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Offgrid & Rural LifeStyles
+                        Off Grid Rural LifeStyles
                     </button></a>
                 </td>
                 <td style="text-align: center;">
@@ -385,40 +385,40 @@
     <!--White paper-->
     <!-- Inline JavaScript for Popup and Button Logic -->
     <script>
-function checkCheckboxes() {
-    const isChecked = readCheckbox.checked && riskCheckbox.checked;
+    function checkCheckboxes() {
+        const isChecked = readCheckbox.checked && riskCheckbox.checked;
     
-    [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
-        btn.disabled = !isChecked;
-        btn.style.opacity = isChecked ? '1' : '0.5';
-        btn.style.cursor = isChecked ? 'pointer' : 'not-allowed';
+        [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
+            btn.disabled = !isChecked;
+            btn.style.opacity = isChecked ? '1' : '0.5';
+            btn.style.cursor = isChecked ? 'pointer' : 'not-allowed';
     });
 
     // Only set onclick events if checkboxes are checked
-    eco1Btn.onclick = isChecked ? () => { window.location.href = 'palmventures.html'; } : null;
-    eco2Btn.onclick = isChecked ? () => { window.location.href = 'ruralliving.html'; } : null;
-    eco3Btn.onclick = isChecked ? () => { window.location.href = 'mountainliving.html'; } : null;
-    eco4Btn.onclick = isChecked ? () => { window.location.href = 'bigskyliving.html'; } : null;
-}
+        eco1Btn.onclick = isChecked ? () => { window.location.href = 'palmventures.html'; } : null;
+        eco2Btn.onclick = isChecked ? () => { window.location.href = 'ruralliving.html'; } : null;
+        eco3Btn.onclick = isChecked ? () => { window.location.href = 'mountainliving.html'; } : null;
+        eco4Btn.onclick = isChecked ? () => { window.location.href = 'bigskyliving.html'; } : null;
+    }
 
-// Event listeners
-document.addEventListener('DOMContentLoaded', () => {
-    // Get DOM elements
-    const whiteBtn = document.getElementById('whiteBtn');
-    const whitepaperPopup = document.getElementById('whitepaperPopup');
-    const closewhiteBtn = document.getElementById('closewhiteBtn');
-    const readCheckbox = document.getElementById('readCheckbox');
-    const riskCheckbox = document.getElementById('riskCheckbox');
-    const eco1Btn = document.getElementById('eco1Btn');
-    const eco2Btn = document.getElementById('eco2Btn');
-    const eco3Btn = document.getElementById('eco3Btn');
-    const eco4Btn = document.getElementById('eco4Btn');
+    // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+        // Get DOM elements
+        const whiteBtn = document.getElementById('whiteBtn');
+        const whitepaperPopup = document.getElementById('whitepaperPopup');
+        const closewhiteBtn = document.getElementById('closewhiteBtn');
+        const readCheckbox = document.getElementById('readCheckbox');
+        const riskCheckbox = document.getElementById('riskCheckbox');
+        const eco1Btn = document.getElementById('eco1Btn');
+        const eco2Btn = document.getElementById('eco2Btn');
+        const eco3Btn = document.getElementById('eco3Btn');
+        const eco4Btn = document.getElementById('eco4Btn');
 
-    // Initialize buttons as disabled
-    [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
-        btn.disabled = true;
-        btn.style.opacity = '0.5';
-        btn.style.cursor = 'not-allowed';
+        // Initialize buttons as disabled
+        [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
+            btn.disabled = true;
+            btn.style.opacity = '0.5';
+            btn.style.cursor = 'not-allowed';
     });
 
     // Show whitepaper popup
@@ -432,11 +432,119 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Check checkboxes on change
+        readCheckbox.addEventListener('change', checkCheckboxes);
+        riskCheckbox.addEventListener('change', checkCheckboxes);
+    });
+    </script>
+    
+    <!-- $VISTA Balance Check and Popup Logic -->
+    <script>
+    async function checkVistaBalance() {
+        try {
+        const { solana } = window;
+        if (!solana || !solana.isPhantom) {
+            console.error('Phantom Wallet not detected.');
+            return false;
+        }
+
+        // Get the connected wallet's public key
+        const publicKey = solana.publicKey;
+        if (!publicKey) {
+            console.error('No wallet connected.');
+            return false;
+        }
+
+        // Solana connection to mainnet
+        const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'), 'confirmed');
+
+        // $VISTA token contract address
+        const tokenMintAddress = new solanaWeb3.PublicKey('4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump');
+
+        // Get token accounts for the wallet
+        const tokenAccounts = await connection.getParsedTokenAccountsByOwner(publicKey, {
+            mint: tokenMintAddress
+        });
+
+        // Check if there are any $VISTA tokens
+        let vistaBalance = 0;
+        if (tokenAccounts.value.length > 0) {
+            vistaBalance = tokenAccounts.value[0].account.data.parsed.info.tokenAmount.uiAmount;
+        }
+
+            return vistaBalance > 0;
+    } catch (error) {
+            console.error('Error checking $VISTA balance:', error);
+            return false;
+        }
+    }
+
+    function updateButtonStates(hasVista, checkboxesChecked) {
+        const ecoButtons = [eco1Btn, eco2Btn, eco3Btn, eco4Btn];
+        ecoButtons.forEach(btn => {
+            const isEnabled = hasVista && checkboxesChecked;
+            btn.disabled = !isEnabled;
+            btn.style.opacity = isEnabled ? '1' : '0.5';
+            btn.style.cursor = isEnabled ? 'pointer' : 'not-allowed';
+            btn.onclick = isEnabled ? btn.onclick : null; // Preserve existing onclick if enabled
+        });
+    }
+
+    // Modified checkCheckboxes to include balance check
+    async function checkCheckboxes() {
+        const isChecked = readCheckbox.checked && riskCheckbox.checked;
+        const hasVista = await checkVistaBalance();
+    
+        updateButtonStates(hasVista, isChecked);
+
+    // Show buy $VISTA popup if no balance
+        if (!hasVista) {
+            buyVistaPopup.style.display = 'block';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+    // Get DOM elements
+        const buyVistaPopup = document.getElementById('buyVistaPopup');
+        const closeBuyVistaBtn = document.getElementById('closeBuyVistaBtn');
+        const readCheckbox = document.getElementById('readCheckbox');
+        const riskCheckbox = document.getElementById('riskCheckbox');
+        const eco1Btn = document.getElementById('eco1Btn');
+        const eco2Btn = document.getElementById('eco2Btn');
+        const eco3Btn = document.getElementById('eco3Btn');
+        const eco4Btn = document.getElementById('eco4Btn');
+    
+    // Close buy $VISTA popup and redirect
+        closeBuyVistaBtn.addEventListener('click', () => {
+            buyVistaPopup.style.display = 'none';
+            window.location.href = 'https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump';
+    });
+
+    // Run balance check on wallet connection
+    const originalConnectWallet = connectWallet;
+    connectWallet = async () => {
+        await originalConnectWallet();
+        const hasVista = await checkVistaBalance();
+        if (!hasVista) {
+            buyVistaPopup.style.display = 'block';
+        }
+        updateButtonStates(hasVista, readCheckbox.checked && riskCheckbox.checked);
+    };
+
+    // Update button states on checkbox change
     readCheckbox.addEventListener('change', checkCheckboxes);
     riskCheckbox.addEventListener('change', checkCheckboxes);
-});
-</script>
+    });
+    </script>
 
+    <!-- Buy $VISTA Popup -->
+    <div id="buyVistaPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%; z-index: 1000;">
+        <p style="font-family: Tahoma; font-size: 18px; margin: 0 0 10px;">
+            Buy $VISTA first to view our different ecosystems and find out how you can benefit from this opportunity!
+    </p>
+    <button id="closeBuyVistaBtn" style="background-color: #007bff; color: white; border: 2px solid navy; padding: 5px 10px; margin-top: 10px; font-family: Tahoma; font-size: 16px; cursor: pointer;">
+        Buy $VISTA
+    </button>
+    </div>
 
 
 </body>
