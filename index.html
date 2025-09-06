@@ -178,7 +178,7 @@
                     </button></a>
                 </td>
                 <td style="text-align: center;">
-                    <button id="whitepaperBtn" 
+                    <button id="whiteBtn" 
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 150px;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
@@ -226,12 +226,12 @@
         </table>
 
         <!-- Whitepaper Popup -->
-        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white;  padding: 20px; border: 2px solid navy; max-width: 80%;">
+        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%; z-index: 1000;">
             <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
             <div style="margin-top: 10px;">
                 <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
                 <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
-                <button onclick="closeWhitePopup()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top:  10px;">Close</button>
+                <button id="closewhiteBtn" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top: 10px;">Close</button>
             </div>
         </div>
 
@@ -384,6 +384,59 @@
 
     <!--White paper-->
     <!-- Inline JavaScript for Popup and Button Logic -->
+    <script>
+function checkCheckboxes() {
+    const isChecked = readCheckbox.checked && riskCheckbox.checked;
+    
+    [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
+        btn.disabled = !isChecked;
+        btn.style.opacity = isChecked ? '1' : '0.5';
+        btn.style.cursor = isChecked ? 'pointer' : 'not-allowed';
+    });
+
+    // Only set onclick events if checkboxes are checked
+    eco1Btn.onclick = isChecked ? () => { window.location.href = 'palmventures.html'; } : null;
+    eco2Btn.onclick = isChecked ? () => { window.location.href = 'ruralliving.html'; } : null;
+    eco3Btn.onclick = isChecked ? () => { window.location.href = 'mountainliving.html'; } : null;
+    eco4Btn.onclick = isChecked ? () => { window.location.href = 'bigskyliving.html'; } : null;
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Get DOM elements
+    const whiteBtn = document.getElementById('whiteBtn');
+    const whitepaperPopup = document.getElementById('whitepaperPopup');
+    const closewhiteBtn = document.getElementById('closewhiteBtn');
+    const readCheckbox = document.getElementById('readCheckbox');
+    const riskCheckbox = document.getElementById('riskCheckbox');
+    const eco1Btn = document.getElementById('eco1Btn');
+    const eco2Btn = document.getElementById('eco2Btn');
+    const eco3Btn = document.getElementById('eco3Btn');
+    const eco4Btn = document.getElementById('eco4Btn');
+
+    // Initialize buttons as disabled
+    [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+        btn.style.cursor = 'not-allowed';
+    });
+
+    // Show whitepaper popup
+    whiteBtn.addEventListener('click', () => {
+        whitepaperPopup.style.display = 'block';
+    });
+
+    // Close whitepaper popup
+    closewhiteBtn.addEventListener('click', () => {
+        whitepaperPopup.style.display = 'none';
+    });
+
+    // Check checkboxes on change
+    readCheckbox.addEventListener('change', checkCheckboxes);
+    riskCheckbox.addEventListener('change', checkCheckboxes);
+});
+</script>
+    
  <!--<script>
         const whitepaperBtn = document.getElementById('whitepaperBtn');
         const eco1Btn = document.getElementById('eco1Btn');
@@ -427,7 +480,7 @@
  </script>-->
 <!--Break-->
     <script>
-    function checkCheckboxes() {
+/*    function checkCheckboxes() {
     const isChecked = readCheckbox.checked && riskCheckbox.checked;
     
     [eco1Btn, eco2Btn, eco3Btn, eco4Btn].forEach(btn => {
@@ -441,7 +494,7 @@
     eco3Btn.onclick = isChecked ? () => { window.location.href = 'page3.html'; } : null;
     eco4Btn.onclick = isChecked ? () => { window.location.href = 'page4.html'; } : null;
 }
-
+*/
 </script>    
 <!-- Break-->
            <!-- function checkCheckboxes() {
