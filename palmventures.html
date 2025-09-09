@@ -143,11 +143,19 @@
         <table style="width: 100%; margin: 20px 0;">
             <tr>
                 <td style="width: 50%; padding: 10px; text-align: center;">
+                    <button id="homeBtn" 
+                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer;"
+                            onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                            onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        Home
+                    </button>
+                </td>
+                <td style="width: 50%; padding: 10px; text-align: center;">
                     <button id="whitepaperBtn" 
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
-                        View White Paper
+                       White Paper
                     </button>
                 </td>
                 <td style="width: 50%; padding: 10px; text-align: center;">
@@ -156,9 +164,18 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  not-allowed; opacity: 0.5;"
                             onmouseover="if(this.disabled==false){this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Start Staking Now
+                        Start Staking
                     </button>
                 </td>
+                <td style="width: 50%; padding: 10px; text-align: center;">
+                    <button id="rwaBtn" disabled
+                            data-tooltip="Read and Check white paper first!"
+                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  not-allowed; opacity: 0.5;"
+                            onmouseover="if(this.disabled==false){this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
+                            onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
+                        RWA tokenization
+                    </button>
+                </td>                
             </tr>
         </table>
 
@@ -252,19 +269,19 @@
 
     <!-- Commercial Rental Placeholders -->
     <div class="commercial-sidebar">
-        <div class="commercial-placeholder">
+        <div class="commercial-placeholder" style="width: 200; height: 200">
             <a href="https://www.linktr.ee/PalmVentures" target="_blank">
-                Contact owner to advertise your business here!
+                Contact owner to advertise your business here! USD500/ Month
             </a>
         </div>
-        <div class="commercial-placeholder">
+        <div class="commercial-placeholder" style="width: 200; height: 150">
             <a href="https://www.linktr.ee/PalmVentures" target="_blank">
-                Contact owner to advertise your business here!
+                Contact owner to advertise your business here! USD300/Month
             </a>
         </div>
-        <div class="commercial-placeholder">
+        <div class="commercial-placeholder" style="width: 200; height: 100">
             <a href="https://www.linktr.ee/PalmVentures" target="_blank">
-                Contact owner to advertise your business here!
+                Contact owner to advertise your business here! USD200/Month
             </a>
         </div>
     </div>
