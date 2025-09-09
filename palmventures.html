@@ -105,14 +105,21 @@
             position: relative;
         }
         button:enabled[data-tooltip]:hover::before {
-            content: '';
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 5px solid transparent;
-            border-top-color: navy;
-            margin-bottom: -10px;
+                content: attr(data-tooltip);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                color: navy;
+                border: 2px solid navy;
+                padding: 5px 10px;
+                font-family: Tahoma;
+                font-size: 14px;
+                white-space: nowrap;
+                z-index: 1200;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
         }        
     </style>
 </head>
