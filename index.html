@@ -53,7 +53,7 @@
             flex-direction: column;
             gap: 10px;
         }
-        .commercial-placeholder {
+        .commercial-placeholder1 {
             width: 200px;
             height: 200px;
             background-color: #f0f0f0;
@@ -63,6 +63,26 @@
             justify-content: center;
             text-align: center;
         }
+        .commercial-placeholder2 {
+            width: 200px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .commercial-placeholder3 {
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }        
         .commercial-placeholder a {
             font-family: Tahoma;
             font-size: 14px;
@@ -141,6 +161,28 @@
             border-top-color: navy;
             margin-bottom: -10px;
         }
+
+        /* Custom Tooltip for Enabled Buttons */
+            button:enabled[data-tooltip2] {
+            position: relative;
+        }
+
+        button:enabled[data-tooltip2]:hover::after {
+                content: attr(data-tooltip);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                color: navy;
+                border: 2px solid navy;
+                padding: 5px 10px;
+                font-family: Tahoma;
+                font-size: 14px;
+                white-space: nowrap;
+                z-index: 1200;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                cursor: pointer;        
         </style>
     
     <!-- Firebase SDK -->
@@ -204,62 +246,79 @@
             <tr>
                 <td style="text-align: center;">
                     <a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump">
-                    <button id="buy1Btn"
+                    <button id="buy1Btn" enabled
+                            data-tooltip2="Buy $VISTA coins!"                        
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px; position: relative;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
-                        Buy $VISTA Coins
+                        $VISTA Coins
                     </button></a>
                 </td>
                 <td style="text-align: center;">
-                    <button id="whiteBtn" 
+                    <button id="whiteBtn" enabled
+                            data-tooltip2="Read our the white paper!"                        
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 150px; position: relative;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
-                        View White Paper
+                        White Paper
                     </button>
                 </td>
                 <td style="text-align: center;">
                     <a href="palmventures.html">
                     <button id="eco1Btn" disabled
-                            data-tooltip="Buy $VISTA first to view our ecosystems!"
+                            data-tooltip="Buy $VISTA first to view the Ocean & Beach ecosystems!"
+                            data-tooltip2="Vist the Ocean and Beach EcoSystem!"                          
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px; position: relative;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Beach an Ocean Living
+                        Beach & Ocean
                     </button></a>
                 </td>
                 <td style="text-align: center;">
-                    <a href="ruralstyle.html">
+                    <a href="ruralventures.html">
                     <button id="eco2Btn" disabled
-                            data-tooltip="Buy $VISTA first to view our ecosystems!"
+                            data-tooltip="Buy $VISTA first to view the Off Grid ecosystems!"
+                            data-tooltip2="Vist the Off Grid Rural LifeStyle EcoSystem!"                         
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px; position: relative;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Off Grid Rural LifeStyles
+                        Off Grid Rural
                     </button></a>
                 </td>
                 <td style="text-align: center;">
-                    <a href="bigsky.html">
+                    <a href="mountainventures.html">
                     <button id="eco3Btn" disabled
-                            data-tooltip="Buy $VISTA first to view our ecosystems!"
+                            data-tooltip="Buy $VISTA first to view the Mountain Cabin ecosystems!"
+                            data-tooltip2="Vist the Mountain Cabin EcoSystem!"                         
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px; position: relative;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Mountain Cabin Living
+                        Mountain Cabins
                     </button></a>                    
 
                 </td>
                 <td style="text-align: center;">
-                    <a href="bigsky.html">
+                    <a href="bigskyventures.html">
                     <button id="eco4Btn" disabled
-                            data-tooltip="Buy $VISTA first to view our ecosystems!"
+                            data-tooltip="Buy $VISTA first to view the Big Sky ecosystems!"
+                            data-tooltip2="Vist the Big Sky EcoSystem!"                           
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: not-allowed; opacity: 0.5; width: 150px; position: relative;"
                             onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        Big Sky LifeStyles
+                        Big Sky
                     </button></a>
-                </td>                
+                </td>
+                <td style="text-align: center;">
+                    <a href="rwatokenization.html">
+                    <button id="rwaBtn" enabled
+                            data-tooltip="Buy $VISTA first to view the Big Sky ecosystems!"
+                            data-tooltip2="Comming soon RWA tokens on Ripple Ledger!"                           
+                            style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 150px; position: relative;"
+                            onmouseover="if(this.disabled){this.title='Purchase tokens first';} else {this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
+                            onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
+                        RWA Tokens
+                    </button></a>
+                </td>                  
             </tr>
         </table>
 
@@ -348,17 +407,17 @@
 
     <!-- Commercial Rental Placeholders -->
     <div class="commercial-sidebar">
-        <div class="commercial-placeholder">
+        <div class="commercial-placeholder1">
             <a href="https://www.linktr.ee/ExoticCapital" target="_blank">
                 Contact owner to advertise your business here!
             </a>
         </div>
-        <div class="commercial-placeholder">
+        <div class="commercial-placeholder2">
             <a href="https://www.linktr.ee/ExoticCapital" target="_blank">
                 Contact owner to advertise your business here!
             </a>
         </div>
-        <div class="commercial-placeholder">
+        <div class="commercial-placeholder3">
             <a href="https://www.linktr.ee/ExoticCapital" target="_blank">
                 Contact owner to advertise your business here!
             </a>
