@@ -19,8 +19,8 @@
         }
         .wallet-status {
             position: fixed;
-            top: 10px;
-            right: 10px; /* Above commercial boxes */
+            top: 0;
+            right: 0; /* Above commercial boxes */
             display: flex;
             align-items: center;
             gap: 20px;
@@ -31,6 +31,9 @@
             color: navy;
         }
         .wallet-status button {
+            position: fixed;
+            top: 10px;
+            right: 10px; /* Above commercial boxes */
             background-color: #007bff;
             color: navy;
             border: 2px solid navy;
@@ -47,7 +50,7 @@
         .commercial-sidebar {
             position: fixed;
             right: 10px;
-            top: 15%;
+            top: 20%;
             width: 200px;
             display: flex;
             flex-direction: column;
@@ -193,12 +196,14 @@
 
 </head>
 <body>
-    <div class="container">
-       <!-- Wallet Status and Connect Button -->
+  <div class="container">
+    <!-- Wallet Status and Connect Button -->
     <div class="wallet-status">
     <span id="walletStatus">Not Connected</span>
+    </div>
+    <div>
     <button id= "connectBtn" onclick="showPopup()">Connect Wallet</button>
-  </div>
+    </div>
 
   <div id="walletPopup" class="popup">
     <h2>Connect Phantom Wallet</h2>
@@ -208,10 +213,9 @@
   </div>
         <!-- Banner -->
         <img src="large_palmbanner.jpg" alt="Website Banner" width="100%" style="max-width: 1200px; height: auto;">
-
        
         <!-- Title -->
-        <h1 style="font-family: Tahoma; font-size: 48px; text-align: center; margin: 20px 0;">EXOTIC CAPITAL INNOVATIONS</h1>
+        <h1 style="font-family: Tahoma; font-size: 48px; text-align: center; margin: 20px 0;">NAME</h1>
 
         <!-- Logo and Welcome Text -->
         <table style="width: 100%; margin-bottom: 20px;">
