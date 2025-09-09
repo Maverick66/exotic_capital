@@ -26,7 +26,7 @@
             flex-direction: column;
             gap: 10px;
         }
-        .commercial-placeholder {
+        .commercial-placeholder1 {
             width: 200px;
             height: 200px;
             background-color: #f0f0f0;
@@ -36,6 +36,26 @@
             justify-content: center;
             text-align: center;
         }
+        .commercial-placeholder2 {
+            width: 200px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .commercial-placeholder3 {
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }        
         .commercial-placeholder a {
             font-family: Tahoma;
             font-size: 14px;
@@ -147,7 +167,7 @@
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
-                        Home
+                        Return Home
                     </button>
                 </td>
                 <td style="width: 25%; padding: 10px; text-align: center;">
@@ -168,12 +188,12 @@
                     </button>
                 </td>
                 <td style="width: 25%; padding: 10px; text-align: center;">
-                    <button id="rwaBtn" disabled
-                            data-tooltip="Read and Check white paper first!"
+                    <button id="rwaBtn"
+                            data-tooltip="coming soon to Ripple ledger!"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  not-allowed; opacity: 0.5;"
                             onmouseover="if(this.disabled==false){this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
                             onmouseout="if(this.disabled==false){this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';}">
-                        RWA tokenization
+                        RWA Tokens
                     </button>
                 </td>                
             </tr>
@@ -269,17 +289,17 @@
 
     <!-- Commercial Rental Placeholders -->
     <div class="commercial-sidebar">
-        <div class="commercial-placeholder" style="width: 200; height: 200">
+        <div class="commercial-placeholder1" style="width: 200; height: 200">
             <a href="https://www.linktr.ee/PalmVentures" target="_blank">
                 Contact owner to advertise your business here! USD500/ Month
             </a>
         </div>
-        <div class="commercial-placeholder" style="width: 200; height: 150">
+        <div class="commercial-placeholder2" style="width: 200; height: 150">
             <a href="https://www.linktr.ee/PalmVentures" target="_blank">
                 Contact owner to advertise your business here! USD300/Month
             </a>
         </div>
-        <div class="commercial-placeholder" style="width: 200; height: 100">
+        <div class="commercial-placeholder3" style="width: 200; height: 100">
             <a href="https://www.linktr.ee/PalmVentures" target="_blank">
                 Contact owner to advertise your business here! USD200/Month
             </a>
