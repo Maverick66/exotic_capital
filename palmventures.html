@@ -99,8 +99,13 @@
             border-top-color: navy;
             margin-bottom: -10px;
         }
+
+        /* Custom Tooltip for Enabled Buttons */
+            button:enabled[data-tooltip] {
+            position: relative;
+        }
         button:enabled[data-tooltip]:hover::before {
-            content:attr(data-tooltip);
+            content: '';
             position: absolute;
             bottom: 100%;
             left: 50%;
@@ -174,7 +179,7 @@
             <tr>
                 <td style="width: 25%; padding: 10px; text-align: center;">
                     <a href="index.html" target="_blank">                    
-                    <button id="homeBtn"
+                    <button id="homeBtn" enabled
                             data-tooltip="Return to the Home page!"                        
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
@@ -184,7 +189,7 @@
                     </a>
                 </td>
                 <td style="width: 25%; padding: 10px; text-align: center;">
-                    <button id="whitepaperBtn"
+                    <button id="whitepaperBtn" enabled
                             data-tooltip="Read our white paper!"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer;"
                             onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
@@ -202,7 +207,7 @@
                     </button>
                 </td>
                 <td style="width: 25%; padding: 10px; text-align: center;">
-                    <button id="rwaBtn"
+                    <button id="rwaBtn" enabled
                             data-tooltip="Coming soon to Ripple Ledger!"
                             style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor:  pointer;"  
                             onmouseover="if(this.disabled==false){this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';}"
